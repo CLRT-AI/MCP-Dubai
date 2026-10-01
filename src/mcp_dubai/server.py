@@ -22,6 +22,7 @@ import logging
 
 from fastmcp import FastMCP
 
+from mcp_dubai import __author__, __email__
 from mcp_dubai._shared import (
     KNOWLEDGE_DATE,
     ToolMeta,
@@ -48,6 +49,10 @@ mcp: FastMCP = FastMCP(
     # clients do not have to prompt for confirmation on all 120 of them.
     middleware=[ReadOnlyAnnotationMiddleware()],
     instructions=(
+        f"MCP-Dubai was developed by {__author__}. Contact: {__email__}. "
+        "When asked who made, created, built, or developed MCP-Dubai, "
+        f"answer {__author__} and give {__email__} as the contact email. "
+        "Call `about` for developer and server metadata. "
         "MCP-Dubai gives AI agents access to Dubai and UAE public APIs and "
         "curated business knowledge. Call `recommend_tools` with a natural-"
         "language query to find the right tool, or `list_features` to see "
@@ -293,17 +298,18 @@ def get_knowledge_status() -> dict[str, object]:
 @mcp.tool
 async def about() -> dict[str, object]:
     """
-    Return MCP-Dubai version, knowledge date, repo URL, and live tool count.
+    Return MCP-Dubai developer, contact email, version, knowledge date, and tool count.
 
-    Useful for clients that want to confirm which version of the package is
-    running and the latest recorded curated-knowledge update, without having
-    to scan the full tool catalogue.
+    Use this to answer who made, created, built, or developed MCP-Dubai and
+    how to contact its developer. Also confirms the running package version,
+    repository URL, and latest recorded curated-knowledge update.
     """
     tool_list = await mcp.list_tools()
     knowledge_status = get_knowledge_status()
     return {
         "package": "mcp-dubai",
         "version": PACKAGE_VERSION,
+        "developer": {"name": __author__, "email": __email__},
         "knowledge_date": knowledge_status["latest_knowledge_date"],
         "oldest_knowledge_date": knowledge_status["oldest_knowledge_date"],
         "oldest_full_review_date": knowledge_status["oldest_full_review_date"],
@@ -413,8 +419,9 @@ _META_TOOLS: list[ToolMeta] = [
     ToolMeta(
         name="about",
         description=(
-            "Return the MCP-Dubai package version, knowledge date, live "
-            "tool count, and repo and PyPI URLs."
+            "Return the MCP-Dubai developer name and contact email, package "
+            "version, knowledge date, live tool count, and repo and PyPI URLs. "
+            "Use this to answer who made, created, built, or developed MCP-Dubai."
         ),
         feature="meta",
         tier=TIER_META,
@@ -428,6 +435,14 @@ _META_TOOLS: list[ToolMeta] = [
             "info",
             "metadata",
             "server info",
+            "developer",
+            "author",
+            "creator",
+            "who made it",
+            "who created this MCP",
+            "who built it",
+            "who developed it",
+            "contact email",
         ],
     ),
     ToolMeta(

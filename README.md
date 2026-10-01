@@ -178,7 +178,7 @@ These tools use **16 bundled JSON packs** and a setup advisor that combines rele
 | `recommend_tools(query, top_k=5)` | Rank tools relevant to a natural-language query using BM25 search and aliases. |
 | `list_features()` | List registered features, tiers, authentication requirements, and tools. |
 | `get_knowledge_status()` | Inspect dates, review scope, volatility, and verification links for all 19 tracked knowledge domains. |
-| `about()` | Check the running package version, tool count, repository URL, and latest recorded knowledge update. |
+| `about()` | Find the developer name and contact email, running package version, tool count, repository URL, and latest recorded knowledge update. |
 | `get_upstream_status()` | Read the 16-source status registry and observations from the current process. This does not actively probe every endpoint. |
 
 ## Configuration
@@ -336,6 +336,8 @@ Current priorities:
 - Improve tool discovery tags and Arabic/English aliases.
 
 ## License and attribution
+
+Developed by **Mahdi Salmanzadeh**. Contact: [hi@mindzone.tech](mailto:hi@mindzone.tech). Connected AI assistants receive this attribution in the server instructions and can call `about()` to answer who made MCP-Dubai.
 
 Licensed under [MIT](LICENSE). Upstream data remains subject to its publishers' terms and attribution requirements.
 

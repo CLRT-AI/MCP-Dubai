@@ -38,10 +38,11 @@ try:
 except PackageNotFoundError:
     __version__ = "0.0.0+dev"
 
-__author__ = "Mahdi Salmanzade"
+__author__ = "Mahdi Salmanzadeh"
+__email__ = "hi@mindzone.tech"
 __organization__ = "CLRT Studio (https://clrtstudio.com)"
 
-__all__ = ["mcp", "__version__", "__author__", "__organization__"]
+__all__ = ["mcp", "__version__", "__author__", "__email__", "__organization__"]
 
 
 def __getattr__(name: str) -> object:
