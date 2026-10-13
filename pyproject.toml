@@ -41,8 +41,9 @@ dependencies = [
     # without a prefix and `await mcp.list_tools()`, neither of which exists on
     # FastMCP 2.x. The <4 cap is also required, since `mount(prefix=)` is slated
     # removed in v4, which became stable on 2026-08-31. Stay on the tested
-    # 3.x line and include its current OAuth/SSRF hardening fixes.
-    "fastmcp>=3.4.7,<4",
+    # 3.x line and include its current security fixes (3.4.8, 2026-10-04:
+    # SSE Host/Origin protection, Cookie forwarding, bounded caches).
+    "fastmcp>=3.4.8,<4",
     # Upper bounds on the majors that would break us. Without them a fresh
     # install silently picks up the next major the day it lands.
     "httpx>=0.28.1,<1",

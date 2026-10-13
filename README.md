@@ -16,7 +16,7 @@
 [![Status: Alpha](https://img.shields.io/badge/status-alpha-orange.svg)](#project-status)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[Quick start](#quick-start) · [Tools](#tool-catalogue) · [Configuration](#configuration) · [Data freshness](#knowledge-freshness) · [Development](#development) · [Latest audit](AUDIT-2026-09-05.md)
+[Quick start](#quick-start) · [Tools](#tool-catalogue) · [Configuration](#configuration) · [Data freshness](#knowledge-freshness) · [Development](#development) · [Latest audit](AUDIT-2026-10-13.md)
 
 </div>
 
@@ -38,7 +38,7 @@ The current source includes **120 tools across 37 features**:
 
 ### Run the current source
 
-Requires Python 3.11 or newer and Git. The September 5 audit tested Python 3.11 through 3.14.
+Requires Python 3.11 or newer and Git. The October 13 audit tested Python 3.11 through 3.14.
 
 ```bash
 git clone https://github.com/mahdi-salmanzade/MCP-Dubai.git
@@ -96,7 +96,7 @@ This starts an MCP stdio process that waits for client messages.
 
 ### Use the published package
 
-**Release snapshot, September 5, 2026:** the repository is version **0.4.0 with 120 tools**; the public PyPI release is **0.2.0 with 91 tools**. Use the source installation above for the catalogue documented here.
+**Release snapshot, October 13, 2026:** the repository is version **0.4.0 with 120 tools**; the public PyPI release is **0.2.0 with 91 tools**. Use the source installation above for the catalogue documented here.
 
 To run the published release with [uv](https://docs.astral.sh/uv/):
 
@@ -234,16 +234,16 @@ The former Dubai Pulse portal redirects to data.dubai. The project retains `PULS
 
 ## Availability and limitations
 
-The [September 5, 2026 audit](AUDIT-2026-09-05.md) records representative service checks, source verification, and remaining limits. These observations are a dated snapshot:
+The [October 13, 2026 audit](AUDIT-2026-10-13.md) records representative service checks, source verification, and remaining limits. These observations are a dated snapshot:
 
 | Integration | Recorded result |
 |---|---|
 | CBUAE exchange rates | Working; 77 currencies returned |
 | CBUAE base rate and four FCSC tools | Blocked by upstream access protection |
-| data.dubai catalogue | Working; 610 datasets, 11 themes, and 75 issuers |
-| DFM | Working; 458 securities, with names missing upstream |
-| RTA GTFS archive | Intermittent access; retrieved archive still identifies the August 23, 2025 build |
-| Other anonymous integrations | Successful representative calls for prayer times, Quran text, weather, currencies, gold, Makani, and Overpass |
+| data.dubai catalogue | Working; 638 datasets, 11 themes, and 75 issuers |
+| DFM | Working; 484 securities, with names missing upstream |
+| RTA GTFS archive | Intermittent access via the apex host; retrieved archive still identifies the August 23, 2025 build |
+| Other anonymous integrations | Successful representative calls for prayer times, Quran text, aviation and general weather, currencies, gold, Makani, and Overpass (Overpass after one transient HTTP 504) |
 | OAuth datasets and WAQI readings | Not live-tested in the audit without representative credentials |
 
 The school dataset contains 16 selected records from an April 2026 snapshot. Nine records received targeted attribute corrections on September 5; school fees were not refreshed. Business costs and onboarding timelines can also be dated estimates, as indicated in the underlying records.
@@ -264,7 +264,7 @@ Freshness is tracked across **19 domains**: 16 JSON packs, `setup_advisor`, `dat
 | `verify_at` | Domain verification or source URL |
 | `disclaimer` | Domain-specific scope and use limitations |
 
-As of **September 5, 2026**, 18 domains have a latest update of `2026-09-05`; `arabic_writer` remains at `2026-04-13`. September updates were targeted: untouched fields and full-review dates retain their earlier verification scope. Detailed corrections and source links are in the [audit report](AUDIT-2026-09-05.md).
+As of **October 13, 2026**, nine domains received a full review (`cost_of_living`, `events`, `free_zones`, `visas`, `setup_advisor`, `dcde`, `ip_trademark`, `founder_essentials`, `data_analyst`) and four more a targeted refresh; the rest keep their earlier stamps, with `arabic_writer` at `2026-04-13`. Targeted updates leave untouched fields and full-review dates at their earlier verification scope. Detailed corrections and source links are in the [audit report](AUDIT-2026-10-13.md).
 
 The freshness checker uses the last **full review**, with alerting budgets of 100 days for high-volatility domains, 190 for medium, and 365 for stable. Monthly prices, deadlines, and events still need review on their own schedules. Passing the age check does not establish that every fact is current.
 
@@ -302,7 +302,7 @@ make check
 
 `make check` runs Ruff lint and format checks, strict mypy, pytest with coverage, and the informational freshness report. Use the `--strict` freshness command above to fail on overdue domains.
 
-The [September 5 audit](AUDIT-2026-09-05.md#verification) recorded **967 passing tests** on each supported Python version tested, with **93.61% coverage** in the primary run. Packaging, type checks, lint, and security scans also passed; the audit documents their scope.
+The [October 13 audit](AUDIT-2026-10-13.md#verification) recorded **1004 passing tests** on each supported Python version (3.11 to 3.14), with **93.77% coverage** in the primary run. Packaging, type checks, lint, and security scans also passed; the audit documents their scope.
 
 ### Architecture
 
@@ -318,13 +318,13 @@ src/mcp_dubai/
 └── agents/           # Arabic writing and data-analysis tools
 ```
 
-Feature `tools.py` modules implement the logic; `server.py` modules expose FastMCP wrappers and register discovery metadata. Shared response models carry results, errors, and knowledge metadata. The source supports `fastmcp>=3.4.7,<4`; dependencies and supported Python versions are declared in [pyproject.toml](pyproject.toml).
+Feature `tools.py` modules implement the logic; `server.py` modules expose FastMCP wrappers and register discovery metadata. Shared response models carry results, errors, and knowledge metadata. The source supports `fastmcp>=3.4.8,<4`; dependencies and supported Python versions are declared in [pyproject.toml](pyproject.toml).
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) for feature conventions, tests, and the review checklist. Report reproducible errors or source corrections through [GitHub issues](https://github.com/mahdi-salmanzade/MCP-Dubai/issues).
 
 ## Project status
 
-MCP-Dubai is **alpha software**. Version 0.4.0 is available in this repository. As recorded in the September 5 audit, PyPI publication remains at 0.2.0 and the validated [MCP Registry manifest](server.json) has no published registry record.
+MCP-Dubai is **alpha software**. Version 0.4.0 is available in this repository. As recorded in the October 13 audit, PyPI publication remains at 0.2.0 and the validated [MCP Registry manifest](server.json) has no published registry record.
 
 Current priorities:
 
