@@ -29,7 +29,8 @@ class TestSetupAdvisorHappyPaths:
         route = data["local_trade_route"]
         assert isinstance(route, dict)
         assert route["det_fees_aed"] == {
-            "branch_licence_annual": 10000,
+            "branch_licence_annual": None,
+            "remote_branch_licence_annual": 10000,
             "temporary_permit": 5000,
         }
         assert any("dlp.dubai.gov.ae" in url for url in route["source_urls"])
@@ -146,8 +147,9 @@ class TestSetupAdvisorEnvelope:
         assert isinstance(knowledge, dict)
         assert knowledge["volatility"] == "high"
         assert knowledge["verify_at"] == "https://invest.dubai.ae"
-        assert knowledge["knowledge_date"] == "2026-09-05"
-        assert knowledge["previous_knowledge_date"] == "2026-08-14"
+        assert knowledge["knowledge_date"] == "2026-10-13"
+        assert knowledge["full_review_date"] == "2026-10-13"
+        assert knowledge["previous_knowledge_date"] == "2026-09-05"
         assert "Resolution 11 of 2025" in knowledge["last_refresh_scope"]
         assert "disclaimer" in knowledge
 
@@ -226,8 +228,9 @@ class TestSetupAdvisorDiscovery:
         registry = get_knowledge_registry()
         meta = registry.get("setup_advisor")
         assert meta is not None
-        assert meta.knowledge_date == "2026-09-05"
-        assert meta.previous_knowledge_date == "2026-08-14"
+        assert meta.knowledge_date == "2026-10-13"
+        assert meta.full_review_date == "2026-10-13"
+        assert meta.previous_knowledge_date == "2026-09-05"
         assert meta.last_refresh_scope is not None
         assert meta.volatility == "high"
 
@@ -260,3 +263,52 @@ class TestSeptemberRouteChecks:
         assert any(
             "QFZP" in warning and "without" in warning for warning in result["data"]["warnings"]
         )
+
+
+class TestOctoberFullReviewRegressions:
+    @pytest.mark.asyncio
+    async def test_crypto_local_trade_keeps_vara_warning(self) -> None:
+        result = await tools.setup_advisor(
+            activity="crypto broker", budget_aed=200000, needs_local_trade=True, industry="crypto"
+        )
+        data = result["data"]
+        assert data["jurisdiction"] == "mainland_or_eligible_free_zone"
+        assert any("VARA" in w for w in data["warnings"])
+
+    @pytest.mark.asyncio
+    async def test_low_budget_blockchain_keeps_vara_warning(self) -> None:
+        result = await tools.setup_advisor(
+            activity="token platform", budget_aed=10000, needs_visa=False, industry="blockchain"
+        )
+        assert any("VARA" in w and "DIFC" in w for w in result["data"]["warnings"])
+
+    @pytest.mark.asyncio
+    async def test_offshore_minimum_matches_rak_icc_pack_price(self) -> None:
+        from mcp_dubai.biz._data.loader import load_data_file
+
+        offshore = load_data_file("free_zones.json")["offshore"]
+        rak = next(o for o in offshore if o["id"] == "rak_icc")
+        result = await tools.setup_advisor(
+            activity="holding", budget_aed=10000, needs_visa=False, industry="general"
+        )
+        data = result["data"]
+        assert data["jurisdiction"] == "offshore"
+        assert abs(data["estimated_setup_cost_aed"]["min"] - rak["setup_cost_usd"] * 3.6725) < 500
+        assert data["budget_assessment"]["below_indicative_minimum"] is True
+        assert not any("Ejari" in step or "visa quota" in step for step in data["next_steps"])
+
+    @pytest.mark.asyncio
+    async def test_visa_count_above_zone_quota_is_flagged(self) -> None:
+        result = await tools.setup_advisor(
+            activity="consulting", budget_aed=15000, visa_count=7, industry="consulting"
+        )
+        warnings = result["data"]["warnings"]
+        assert any(w.startswith("Meydan") and "up to 6 visas" in w for w in warnings)
+        assert any(w.startswith("IFZA packages") and "up to 6 visas" in w for w in warnings)
+
+    @pytest.mark.asyncio
+    async def test_saas_warning_mentions_de_minimis_and_sbr(self) -> None:
+        result = await tools.setup_advisor(activity="saas", budget_aed=30000, industry="saas")
+        warning = next(w for w in result["data"]["warnings"] if "QFZP" in w)
+        assert "de minimis" in warning
+        assert "Small Business Relief" in warning

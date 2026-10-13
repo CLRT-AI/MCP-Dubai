@@ -253,9 +253,11 @@ async def rta_gtfs_static_url() -> dict[str, object]:
                 "download_url": RTA_GTFS_DOWNLOAD_URL,
                 "download_auth_required": False,
                 "availability_note": (
-                    "Intermittent as of 2026-09-05: direct requests returned HTTP 400, "
-                    "but following the dubaipulse.gov.ae apex-host redirect delivered "
-                    "a valid 7z archive. This URL helper does not probe availability."
+                    "Intermittent as of 2026-10-13: the apex-host URL above delivered "
+                    "a valid 7z archive on most tries but sometimes returns an HTTP 400 "
+                    "HTML page; the www host requested directly returned HTTP 400. "
+                    "Retry, and check the file size (about 10 MB) before extracting. "
+                    "This URL helper does not probe availability."
                 ),
                 "archive_format": "7z",
                 "archive_size_mb_approx": 10.4,

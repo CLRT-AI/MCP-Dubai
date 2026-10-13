@@ -184,6 +184,52 @@ class TestAnalyzeSetupDecision:
         assert (await qfzp_check(**plan[2]["args"]))["success"] is True
         assert (await bank_recommendation(**plan[3]["args"]))["success"] is True
 
+    @pytest.mark.asyncio
+    async def test_rejects_industry_setup_advisor_would_reject(self) -> None:
+        # Regression: "jewelry" is a banking industry but not a setup_advisor
+        # one, so the plan's first step was certain to fail.
+        result = await tools.analyze_setup_decision(
+            activity="x", budget_aed=30000, industry="jewelry"
+        )
+        assert result["success"] is False
+        assert "jewelry" in str(result["error"])
+
+    @pytest.mark.asyncio
+    async def test_every_plan_step_names_a_real_tool_with_valid_args(self) -> None:
+        from mcp_dubai.server import mcp
+
+        listed = await mcp.list_tools() if hasattr(mcp, "list_tools") else None
+        if listed is None:
+            listed = list((await mcp.get_tools()).values())
+        schemas = {t.name: t.parameters for t in listed}
+        result = await tools.analyze_setup_decision(activity="x", budget_aed=1, industry="saas")
+        steps = [(s["tool"], s["args"]) for s in result["data"]["plan"]]
+        steps += [(s["tool"], s["args_template"]) for v in tools.PLAN_TEMPLATES.values() for s in v]
+        for name, args in steps:
+            assert name in schemas, name
+            assert set(args) <= set(schemas[name].get("properties", {})), name
+
+
+class TestReportScopeLabel:
+    @pytest.mark.asyncio
+    async def test_full_review_scope_is_not_labelled_targeted(self) -> None:
+        from mcp_dubai._shared.knowledge import register_domain_knowledge
+        from mcp_dubai._shared.schemas import KnowledgeMetadata
+
+        register_domain_knowledge(
+            "test_full_review",
+            KnowledgeMetadata(
+                knowledge_date="2026-10-13",
+                full_review_date="2026-10-13",
+                last_refresh_scope="Full review of 2026-10-13.",
+                volatility="low",
+            ),
+        )
+        result = await tools.synthesize_report(title="X", domains_referenced=["test_full_review"])
+        markdown = str(result["data"]["markdown"])
+        assert "review scope: Full review of 2026-10-13." in markdown
+        assert "targeted scope" not in markdown
+
 
 class TestKnowledgeRegistration:
     def test_registers_with_registry(self) -> None:

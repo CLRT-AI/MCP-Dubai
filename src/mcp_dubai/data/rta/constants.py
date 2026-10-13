@@ -23,7 +23,7 @@ GTFS_TRANSITLAND_MIRROR_DEAD: Final[str] = "https://gtfs-source-feeds.transit.la
 
 # GTFS feed build inside the anonymous 7z download, rechecked 2026-09-05.
 GTFS_FEED_VERSION: Final[str] = "GTFS_20250823"
-GTFS_FEED_VERSION_CHECKED: Final[str] = "2026-09-05"
+GTFS_FEED_VERSION_CHECKED: Final[str] = "2026-10-13"
 
 # Salik VAT: from 2026-06-01 a 5% VAT applies to toll crossings and tag
 # activation fees (Salik PJSC announcement, 2026-05-22). The dataset rows

@@ -95,7 +95,9 @@ def _row(
     budget = MAX_AGE_DAYS[volatility_name]
     full_review_age = (today - full_stamp).days
     latest_update_age = (today - latest_stamp).days
-    targeted = bool(last_refresh_scope)
+    # A scope recorded on the day of a full review describes that review, not a
+    # targeted refresh layered on top of an older one.
+    targeted = bool(last_refresh_scope) and full_stamp != latest_stamp
     return {
         # `pack` is retained for consumers of the script's earlier JSON shape.
         "pack": source,

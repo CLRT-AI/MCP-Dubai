@@ -295,11 +295,46 @@ class TestGoldenVisaCheck:
         assert any("2-year Property Investor Visa" in n["criterion"] for n in not_eligible)
 
     @pytest.mark.asyncio
-    async def test_project_eligible(self) -> None:
+    async def test_project_value_is_no_longer_screened(self) -> None:
+        # ICP replaced the AED 500,000 project-valuation test in September 2026.
         result = await tools.golden_visa_check(project_value_aed=750000)
         data = result["data"]
         assert isinstance(data, dict)
+        assert data["any_eligible"] is False
+        assert data["eligible"] == []
+        notes = data["notes"]
+        assert isinstance(notes, list)
+        assert any("annual_revenue_aed" in n for n in notes)
+
+    @pytest.mark.asyncio
+    async def test_entrepreneur_revenue_threshold(self) -> None:
+        met = (await tools.golden_visa_check(annual_revenue_aed=1_000_000))["data"]
+        assert isinstance(met, dict)
+        assert [e["category"] for e in met["eligible"]] == ["entrepreneur"]
+        short = (await tools.golden_visa_check(annual_revenue_aed=999_999))["data"]
+        assert isinstance(short, dict)
+        assert short["any_eligible"] is False
+        assert "1,000,000" in short["not_eligible"][0]["criterion"]
+
+    @pytest.mark.asyncio
+    async def test_entrepreneur_exit_threshold(self) -> None:
+        met = (await tools.golden_visa_check(prior_exit_value_aed=7_000_000))["data"]
+        assert isinstance(met, dict)
+        assert met["any_eligible"] is True
+        short = (await tools.golden_visa_check(prior_exit_value_aed=6_999_999))["data"]
+        assert isinstance(short, dict)
+        assert short["any_eligible"] is False
+
+    @pytest.mark.asyncio
+    async def test_entrepreneur_either_test_suffices(self) -> None:
+        data = (
+            await tools.golden_visa_check(
+                annual_revenue_aed=200_000, prior_exit_value_aed=8_000_000
+            )
+        )["data"]
+        assert isinstance(data, dict)
         assert data["any_eligible"] is True
+        assert data["not_eligible"] == []
 
 
 class TestKnowledgeRegistration:
@@ -308,7 +343,7 @@ class TestKnowledgeRegistration:
         result = await tools.list_visa_types()
         knowledge = result["knowledge"]
         assert isinstance(knowledge, dict)
-        assert knowledge["knowledge_date"] == "2026-09-28"
+        assert knowledge["knowledge_date"] == "2026-10-13"
 
     def test_registers_with_knowledge_registry(self) -> None:
         import importlib
@@ -319,7 +354,7 @@ class TestKnowledgeRegistration:
         importlib.reload(visas_tools)
         meta = get_knowledge_registry().get("visas")
         assert meta is not None
-        assert meta.knowledge_date == "2026-09-28"
+        assert meta.knowledge_date == "2026-10-13"
 
 
 class TestCuratedPackSections:
@@ -350,7 +385,11 @@ class TestSeptemberValidation:
             monthly_salary_aed=35000,
             duration_years_min=10,
         )
-        assert [v["id"] for v in result["data"]["candidates"]] == ["golden_specialized_talent"]
+        # ICP and GDRFA now list the entrepreneur Golden route at 10 years (ICP page updated 2026-09-10).
+        assert [v["id"] for v in result["data"]["candidates"]] == [
+            "golden_specialized_talent",
+            "golden_entrepreneur",
+        ]
 
     @pytest.mark.asyncio
     async def test_negative_optional_inputs_rejected(self) -> None:
@@ -361,3 +400,5 @@ class TestSeptemberValidation:
             "success"
         ] is False
         assert (await tools.golden_visa_check(project_value_aed=-1))["success"] is False
+        assert (await tools.golden_visa_check(annual_revenue_aed=-1))["success"] is False
+        assert (await tools.golden_visa_check(prior_exit_value_aed=-1))["success"] is False

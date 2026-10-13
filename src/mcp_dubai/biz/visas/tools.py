@@ -30,6 +30,12 @@ _VIRTUAL_WORKING_MIN_AED: Final[float] = _VIRTUAL_WORKING_MIN_USD * AED_PER_USD 
 # two years, not AED 360,000 cumulative across both.
 _GREEN_FREELANCER_MIN_ANNUAL_AED: Final[int] = 360_000
 
+# Golden Visa entrepreneur (ICP page updated 2026-09-10): annual revenue of a
+# UAE SME, or the total sale value of prior ventures. These replaced the old
+# AED 500,000 project-valuation test.
+_GOLDEN_ENTREPRENEUR_MIN_REVENUE_AED: Final[int] = 1_000_000
+_GOLDEN_ENTREPRENEUR_MIN_EXIT_AED: Final[int] = 7_000_000
+
 VALID_PROFILES = {
     "founder",
     "salaried_employee",
@@ -162,7 +168,7 @@ async def visa_recommend(
             )
         _add(
             "golden_entrepreneur",
-            "Founders with a project worth at least AED 500,000 in technical/future fields can apply for the Golden Visa entrepreneur category.",
+            "Founders of a UAE SME with AED 1,000,000+ annual revenue, or with prior exits totalling AED 7,000,000+, can apply for the 10-year Golden Visa entrepreneur category.",
         )
 
     elif profile == "salaried_employee":
@@ -211,13 +217,13 @@ async def visa_recommend(
         )
         _add(
             "golden_entrepreneur",
-            "Golden Visa entrepreneur category for projects worth at least AED 500,000 in technical/future fields.",
+            "Golden Visa entrepreneur category (10 years) for a UAE SME with AED 1,000,000+ annual revenue or prior exits totalling AED 7,000,000+.",
         )
 
     elif profile == "real_estate_investor":
         _add(
             "golden_investor_real_estate",
-            "Real estate worth AED 2 million or more in approved areas qualifies for the 10-year Golden Visa.",
+            "Real estate worth AED 2 million or more can qualify for the 10-year Golden Visa, including approved-bank mortgaged or approved-developer off-plan property.",
         )
         _add(
             "property_investor_2yr",
@@ -301,12 +307,16 @@ async def golden_visa_check(
     monthly_salary_aed: int | None = None,
     real_estate_value_aed: int | None = None,
     project_value_aed: int | None = None,
+    annual_revenue_aed: int | None = None,
+    prior_exit_value_aed: int | None = None,
 ) -> dict[str, object]:
     """Screen supplied financial thresholds; this does not determine visa eligibility."""
     for name, value in (
         ("monthly_salary_aed", monthly_salary_aed),
         ("real_estate_value_aed", real_estate_value_aed),
         ("project_value_aed", project_value_aed),
+        ("annual_revenue_aed", annual_revenue_aed),
+        ("prior_exit_value_aed", prior_exit_value_aed),
     ):
         if value is not None and value < 0:
             return (
@@ -316,6 +326,7 @@ async def golden_visa_check(
             )
     eligible: list[dict[str, str]] = []
     not_eligible: list[dict[str, str]] = []
+    notes: list[str] = []
 
     if monthly_salary_aed is not None:
         if monthly_salary_aed >= 30000:
@@ -347,13 +358,11 @@ async def golden_visa_check(
                 {
                     "category": "real_estate_investor",
                     "criterion": (
-                        "AED 2,000,000+ in UAE property in approved areas. "
-                        "Traditionally paid-off (or substantial equity if "
-                        "mortgaged, with NOC); April-May 2026 industry "
-                        "guidance suggests off-plan and mortgaged property "
-                        "may now qualify on the DLD-certified valuation, "
-                        "but that change is UNCONFIRMED. Verify with "
-                        "GDRFA/ICP."
+                        "AED 2,000,000+ in UAE property. ICP and GDRFA accept "
+                        "property mortgaged with an approved bank or bought "
+                        "off-plan from an approved developer; neither states a "
+                        "minimum paid-in share, so confirm the evidence (DLD "
+                        "certificate, bank letter) with GDRFA/ICP."
                     ),
                 }
             )
@@ -370,28 +379,49 @@ async def golden_visa_check(
                 }
             )
 
-    if project_value_aed is not None:
-        if project_value_aed >= 500000:
-            eligible.append(
-                {
-                    "category": "entrepreneur",
-                    "criterion": (
-                        "Project worth AED 500,000+ meets the ICP entrepreneur "
-                        "valuation threshold for its published 5-year route, subject "
-                        "to auditor and authority/incubator evidence. Dubai's 10-year "
-                        "route has different nomination and business criteria."
-                    ),
-                }
+    entrepreneur_met: list[str] = []
+    entrepreneur_short: list[str] = []
+    if annual_revenue_aed is not None:
+        if annual_revenue_aed >= _GOLDEN_ENTREPRENEUR_MIN_REVENUE_AED:
+            entrepreneur_met.append(
+                "UAE SME annual revenue of AED 1,000,000+ meets the ICP threshold, "
+                "subject to approval of the venture by an accredited incubator, "
+                "the Ministry of Economy or a relevant local authority."
             )
         else:
-            not_eligible.append(
-                {
-                    "category": "entrepreneur",
-                    "criterion": (
-                        f"Need AED 500,000+ project value. Have AED {project_value_aed}."
-                    ),
-                }
+            entrepreneur_short.append(
+                f"ICP requires UAE SME annual revenue of AED 1,000,000+. "
+                f"Have AED {annual_revenue_aed}."
             )
+    if prior_exit_value_aed is not None:
+        if prior_exit_value_aed >= _GOLDEN_ENTREPRENEUR_MIN_EXIT_AED:
+            entrepreneur_met.append(
+                "Prior ventures sold for a total of AED 7,000,000+ meets the ICP "
+                "founder-exit threshold."
+            )
+        else:
+            entrepreneur_short.append(
+                f"ICP requires prior ventures sold for a total of AED 7,000,000+. "
+                f"Have AED {prior_exit_value_aed}."
+            )
+    if entrepreneur_met:
+        eligible.append(
+            {
+                "category": "entrepreneur",
+                "criterion": (
+                    " ".join(entrepreneur_met) + " Dubai's GDRFA route instead uses a "
+                    "Dubai Future Foundation nomination with its own income tests."
+                ),
+            }
+        )
+    elif entrepreneur_short:
+        not_eligible.append({"category": "entrepreneur", "criterion": " ".join(entrepreneur_short)})
+    if project_value_aed is not None:
+        notes.append(
+            "project_value_aed is no longer screened: ICP replaced the AED 500,000 "
+            "project-valuation test with AED 1,000,000 annual SME revenue or AED "
+            "7,000,000 in prior exits. Pass annual_revenue_aed or prior_exit_value_aed."
+        )
 
     return (
         ToolResponse[dict[str, object]]
@@ -402,10 +432,13 @@ async def golden_visa_check(
                 "requires_authority_approval": True,
                 "eligible": eligible,
                 "not_eligible": not_eligible,
+                "notes": notes,
                 "inputs": {
                     "monthly_salary_aed": monthly_salary_aed,
                     "real_estate_value_aed": real_estate_value_aed,
                     "project_value_aed": project_value_aed,
+                    "annual_revenue_aed": annual_revenue_aed,
+                    "prior_exit_value_aed": prior_exit_value_aed,
                 },
             },
             knowledge=KNOWLEDGE,

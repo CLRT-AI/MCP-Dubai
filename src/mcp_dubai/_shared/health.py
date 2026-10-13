@@ -255,7 +255,7 @@ def _bootstrap_known_upstreams(registry: UpstreamRegistry) -> None:
             "endpoint": "www.centralbank.ae/umbraco/Surface/Exchange",
             "requires_auth": False,
             "initial_status": "working",
-            "initial_reason": "English/Arabic parser verified on 2026-09-05; all 77 currencies mapped.",
+            "initial_reason": "English/Arabic parser verified on 2026-10-13; all 77 currencies mapped.",
             "features": ["cbuae"],
         },
         {
@@ -263,7 +263,7 @@ def _bootstrap_known_upstreams(registry: UpstreamRegistry) -> None:
             "endpoint": "www.centralbank.ae/umbraco/Surface/InterestRate",
             "requires_auth": False,
             "initial_status": "blocked",
-            "initial_reason": "Cloudflare bot protection rechecked 2026-09-05 (HTTP 403).",
+            "initial_reason": "Cloudflare bot protection rechecked 2026-10-13 (HTTP 403).",
             "features": ["cbuae"],
         },
         {
@@ -272,7 +272,7 @@ def _bootstrap_known_upstreams(registry: UpstreamRegistry) -> None:
             "requires_auth": False,
             "initial_status": "blocked",
             "initial_reason": (
-                "Cloudflare bot protection rechecked 2026-09-05 (HTTP 403). "
+                "Cloudflare bot protection rechecked 2026-10-13 (HTTP 403). "
                 "The same FCSC datasets are browsable on bayanat.ae."
             ),
             "features": ["fcsc_ckan"],
@@ -350,11 +350,12 @@ def _bootstrap_known_upstreams(registry: UpstreamRegistry) -> None:
         },
         {
             "name": "rta_gtfs",
-            "endpoint": "www.dubaipulse.gov.ae (direct file download)",
+            "endpoint": "dubaipulse.gov.ae (direct file download)",
             "requires_auth": False,
             "initial_status": "degraded",
             "initial_reason": (
-                "Anonymous download was intermittent on 2026-09-05 (HTTP 400, then valid 7z via the apex-host redirect). The old "
+                "Anonymous download was intermittent on 2026-10-13 (the www host returned HTTP 400; the apex host "
+                "served the valid 7z on 3 of 4 tries). The old "
                 "transit.land mirror now returns 401."
             ),
             "features": ["rta"],
@@ -364,7 +365,7 @@ def _bootstrap_known_upstreams(registry: UpstreamRegistry) -> None:
             "endpoint": "api2.dfm.ae",
             "requires_auth": False,
             "initial_status": "working",
-            "initial_reason": "Undocumented anonymous JSON endpoints, rechecked 2026-09-05.",
+            "initial_reason": "Undocumented anonymous JSON endpoints, rechecked 2026-10-13.",
             "features": ["dfm"],
         },
         {
@@ -372,7 +373,7 @@ def _bootstrap_known_upstreams(registry: UpstreamRegistry) -> None:
             "endpoint": "www.makani.ae/MakaniPublicDataService",
             "requires_auth": False,
             "initial_status": "working",
-            "initial_reason": "Official Dubai Municipality public SOAP service, verified 2026-07-02.",
+            "initial_reason": "Official Dubai Municipality public SOAP service, verified 2026-10-13.",
             "features": ["makani"],
         },
         {
@@ -381,7 +382,7 @@ def _bootstrap_known_upstreams(registry: UpstreamRegistry) -> None:
             "requires_auth": False,
             "initial_status": "working",
             "initial_reason": (
-                "Server-rendered DJG retail rates page, parsed as HTML. Verified 2026-07-02."
+                "Server-rendered DJG retail rates page, parsed as HTML. Verified 2026-10-13."
             ),
             "features": ["gold_rate"],
         },
@@ -392,7 +393,7 @@ def _bootstrap_known_upstreams(registry: UpstreamRegistry) -> None:
             "initial_status": "working",
             "initial_reason": (
                 "Credential-free catalog metadata API on the portal that "
-                "replaced Dubai Pulse. Rechecked 2026-09-05."
+                "replaced Dubai Pulse. Rechecked 2026-10-13."
             ),
             "features": ["data_dubai"],
         },

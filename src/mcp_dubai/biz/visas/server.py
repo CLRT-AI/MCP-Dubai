@@ -82,6 +82,8 @@ async def golden_visa_check(
     monthly_salary_aed: int | None = None,
     real_estate_value_aed: int | None = None,
     project_value_aed: int | None = None,
+    annual_revenue_aed: int | None = None,
+    prior_exit_value_aed: int | None = None,
 ) -> dict[str, object]:
     """
     Screen financial thresholds for Golden Visa routes; this is not final eligibility.
@@ -91,16 +93,25 @@ async def golden_visa_check(
             AED 30,000 is the published threshold; qualification, employment
             and evidence requirements must also be met.
         real_estate_value_aed: UAE property value for the investor category.
-            Must be at least AED 2,000,000 in approved areas.
-        project_value_aed: Business project value for the entrepreneur
-            category. Must be at least AED 500,000 in technical / future
-            fields under the published ICP route, with auditor and
-            authority/incubator evidence. Dubai has different route criteria.
+            Must be at least AED 2,000,000; approved-bank mortgages and
+            approved-developer off-plan property can count.
+        project_value_aed: Deprecated. ICP dropped the AED 500,000
+            project-valuation test; a value here is not screened and only
+            returns a note. Use annual_revenue_aed or prior_exit_value_aed.
+        annual_revenue_aed: Annual revenue of the founder's UAE SME. ICP's
+            entrepreneur route needs at least AED 1,000,000, plus approval
+            of the venture by an accredited incubator or authority.
+        prior_exit_value_aed: Total sale value of ventures the founder
+            previously built and sold. ICP's alternative entrepreneur test
+            needs at least AED 7,000,000. Dubai's GDRFA route uses a Dubai
+            Future Foundation nomination with different criteria.
     """
     return await tools.golden_visa_check(
         monthly_salary_aed=monthly_salary_aed,
         real_estate_value_aed=real_estate_value_aed,
         project_value_aed=project_value_aed,
+        annual_revenue_aed=annual_revenue_aed,
+        prior_exit_value_aed=prior_exit_value_aed,
     )
 
 

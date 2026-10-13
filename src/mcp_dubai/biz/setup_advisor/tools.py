@@ -26,15 +26,21 @@ _BASE_KNOWLEDGE: KnowledgeMetadata = extract_knowledge(_FREE_ZONES_DATA)
 # Override with a setup_advisor specific verify_at since this tool spans
 # multiple domains.
 KNOWLEDGE = KnowledgeMetadata(
-    knowledge_date="2026-09-05",
-    full_review_date=(_BASE_KNOWLEDGE.full_review_date or _BASE_KNOWLEDGE.knowledge_date),
-    previous_knowledge_date="2026-08-14",
+    knowledge_date="2026-10-13",
+    full_review_date="2026-10-13",
+    previous_knowledge_date="2026-09-05",
     last_refresh_scope=(
-        "Targeted correctness audit of 2026-09-05: preserved the Resolution 11 of 2025 "
-        "conditional route; corrected QFZP/SaaS wording, prevented low budgets from "
-        "bypassing virtual-asset regulation, removed blanket crypto-bank exclusion, "
-        "and exposed indicative budget shortfalls. "
-        "Not a full re-verification of every setup rule."
+        "Full review of 2026-10-13: re-verified the Resolution 11 of 2025 DET route and "
+        "fees (AED 10,000 branch licence per year, AED 5,000 six-month temporary permit), "
+        "MD 229/2025 as the current Qualifying Activities decision, the QFZP 9% rate on "
+        "non-qualifying income without the AED 375,000 band, and VARA's sole jurisdiction "
+        "over Dubai mainland and free zones other than DIFC. Fixed: crypto and blockchain "
+        "requests no longer lose the virtual-asset licensing warning on the local-trade or "
+        "low-budget routes; the offshore minimum now matches the RAK ICC price in "
+        "free_zones.json; offshore next steps no longer mention Ejari or visa quota; "
+        "visa_count is checked against candidate zone quotas; IFZA pricing is labelled a "
+        "historical snapshot; Wio onboarding wording follows the banks pack. Free-zone "
+        "prices, PRO budget range and timelines remain indicative and were not re-quoted."
     ),
     volatility="high",
     verify_at="https://invest.dubai.ae",
@@ -45,6 +51,27 @@ KNOWLEDGE = KnowledgeMetadata(
     ),
 )
 register_domain_knowledge("setup_advisor", KNOWLEDGE)
+
+# Indicative offshore minimum: RAK ICC at USD 3,000 (free_zones.json `offshore`)
+# converted at the AED 3.6725 peg is about AED 11,018.
+_OFFSHORE_MIN_AED = 11000
+
+# Map the candidate labels used below onto free_zones.json ids so visa_count
+# can be checked against each zone's recorded visa quota.
+_CANDIDATE_ZONE_IDS: dict[str, str] = {
+    "IFZA": "ifza",
+    "Meydan": "meydan",
+    "Dubai South": "dubai_south",
+    "DAFZA": "dafza",
+    "DMCC": "dmcc",
+    "DSO Dtec": "dso_dtec",
+    "TECOM": "tecom",
+    "TECOM (DIC)": "tecom",
+    "DIFC Innovation Licence": "difc_innovation",
+}
+
+_VARA_URL = "https://www.vara.ae"
+_VIRTUAL_ASSET_INDUSTRIES = {"crypto", "blockchain"}
 
 _FREE_ZONE_MAINLAND_RESOLUTION_URL = (
     "https://dlp.dubai.gov.ae/Legislation%20Reference/2025/"
@@ -122,8 +149,12 @@ def _decide(
                 "branch licence or temporary permit before conducting approved activities "
                 "outside the free zone."
             ),
+            # Article 12 fixes fees only for a branch operating out of the free
+            # zone and the temporary permit; an in-Emirate branch licence pays
+            # the prescribed DET fees, so it has no fixed amount here.
             "det_fees_aed": {
-                "branch_licence_annual": 10000,
+                "branch_licence_annual": None,
+                "remote_branch_licence_annual": 10000,
                 "temporary_permit": 5000,
             },
             "conditions": [
@@ -142,15 +173,16 @@ def _decide(
     elif not needs_visa and budget_aed < 15000 and industry != "crypto":
         jurisdiction = "offshore"
         reasoning.append(
-            "Offshore (RAK ICC or JAFZA Offshore) is the cheapest path when "
-            "no UAE visa is needed. Useful for asset holding, IP ownership, "
-            "or international structuring."
+            "Offshore is the cheapest path when no UAE visa is needed. RAK ICC "
+            "(from approximately USD 3,000) fits this budget; JAFZA Offshore "
+            "(approximately AED 17,000 to 30,000) is the Dubai-domiciled option. "
+            "Useful for asset holding, IP ownership, or international structuring."
         )
         warnings.append(
             "Offshore companies cannot get UAE visas, cannot trade with UAE "
             "customers, and cannot lease office space inside the UAE."
         )
-        cost_min = 5500  # USD 1500 in AED-ish
+        cost_min = _OFFSHORE_MIN_AED
         cost_max = 30000
         timeline_weeks = "1 to 3"
 
@@ -159,8 +191,9 @@ def _decide(
         jurisdiction = "free_zone"
         reasoning.append(
             "A budget under AED 20,000 fits a cheap mainstream free zone like "
-            "IFZA (from approximately AED 12,900) or Meydan (from approximately "
-            "AED 12,500). Both offer zero-visa to multi-visa packages."
+            "Meydan (base licence package AED 12,500, confirmed September 2026) "
+            "or IFZA (historical 2025 snapshot of approximately AED 12,900; IFZA "
+            "now quotes on enquiry). Both offer zero-visa to multi-visa packages."
         )
         warnings.append(
             "Meydan has documented bank account difficulties (founder reports). "
@@ -194,10 +227,11 @@ def _decide(
     elif industry == "crypto":
         jurisdiction = "free_zone"
         reasoning.append(
-            "Crypto / virtual asset businesses operating in Dubai require a "
-            "VARA (Virtual Assets Regulatory Authority) licence under Law 4 "
-            "of 2022. Choose a free zone aligned with VARA expectations and "
-            "expect heavy KYC."
+            "Crypto / virtual asset businesses operating in Dubai's mainland or "
+            "free zones (other than DIFC) require a VARA (Virtual Assets "
+            "Regulatory Authority) licence under Law 4 of 2022, in addition to "
+            "the commercial licence. Choose a free zone aligned with VARA "
+            "expectations and expect heavy KYC."
         )
         warnings.append(
             "DIFC and ADGM are regulated separately. Crypto banking depends on the "
@@ -234,14 +268,40 @@ def _decide(
         cost_max = 50000
         timeline_weeks = "1 to 3"
 
+    if industry in _VIRTUAL_ASSET_INDUSTRIES and not any("VARA" in r for r in reasoning):
+        warnings.append(
+            "Any virtual-asset activity (exchange, custody, broker-dealer, transfer, "
+            "issuance and similar) in Dubai's mainland or free zones other than DIFC "
+            "needs a VARA licence on top of the commercial licence; inside DIFC the "
+            f"DFSA regulates it. Confirm the activity's status at {_VARA_URL} before "
+            "relying on this route or its cost estimate."
+        )
+
     if industry == "saas":
         warnings.append(
             "SaaS is not itself a named Qualifying Activity under MD 229/2025. "
             "QFZP treatment depends on the customer, excluded activities and any "
             "qualifying intellectual-property income. A QFZP pays 9% on non-qualifying "
-            "taxable income without the ordinary AED 375,000 band. An ordinary "
-            "taxable person applies the normal bands and available reliefs."
+            "taxable income without the ordinary AED 375,000 band, and loses QFZP "
+            "status if non-qualifying revenue exceeds the de minimis limit (lower of "
+            "5% of total revenue or AED 5 million). Small Business Relief is not "
+            "available to a QFZP. An ordinary taxable person applies the normal "
+            "bands and available reliefs."
         )
+
+    zones_by_id = {z.get("id"): z for z in free_zones if isinstance(z, dict)}
+    if needs_visa:
+        for label in candidates:
+            zone = zones_by_id.get(_CANDIDATE_ZONE_IDS.get(label, ""))
+            if zone is None:
+                continue
+            visas = zone.get("visas") or {}
+            max_visas = visas.get("max") if isinstance(visas, dict) else None
+            if isinstance(max_visas, int) and visa_count > max_visas:
+                warnings.append(
+                    f"{label} packages recorded here allow up to {max_visas} visas; "
+                    f"{visa_count} requested needs a larger office or another zone."
+                )
 
     if budget_aed < cost_min:
         warnings.append(
@@ -253,19 +313,29 @@ def _decide(
     warnings.extend(
         [
             "Bank account opening takes 1 to 16 weeks. Apply to 2 or 3 banks "
-            "in parallel. Wio Business is fastest (1 to 3 days) for clean profiles.",
+            "in parallel. Wio Business advertises processing in about 3 working days "
+            "for complete, clean applications.",
             "Budget AED 5,000 to 15,000 on top of the license for PRO services, "
             "MOFA attestation, and legal translation.",
         ]
     )
 
-    next_steps = [
-        "Reserve a trade name via app.invest.dubai.ae or your chosen free zone portal",
-        "Prepare passport copies, address proof, and a one-page business plan",
-        "Get Ejari (mainland) or flexi-desk (free zone) before applying for visa quota",
-        "Apply to 2 or 3 banks in parallel to hedge onboarding risk",
-        "Register for UAE Pass on day one",
-    ]
+    if jurisdiction == "offshore":
+        next_steps = [
+            "Appoint a registered agent approved by the offshore registry (RAK ICC or JAFZA)",
+            "Prepare passport copies, address proof, and a one-page business plan",
+            "Confirm the offshore company will not trade with UAE customers or need visas",
+            "Apply to 2 or 3 banks in parallel to hedge onboarding risk",
+            "Register for UAE Pass on day one",
+        ]
+    else:
+        next_steps = [
+            "Reserve a trade name via app.invest.dubai.ae or your chosen free zone portal",
+            "Prepare passport copies, address proof, and a one-page business plan",
+            "Get Ejari (mainland) or flexi-desk (free zone) before applying for visa quota",
+            "Apply to 2 or 3 banks in parallel to hedge onboarding risk",
+            "Register for UAE Pass on day one",
+        ]
 
     result: dict[str, Any] = {
         "jurisdiction": jurisdiction,

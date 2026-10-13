@@ -16,15 +16,19 @@ from mcp_dubai._shared.knowledge import (
 )
 from mcp_dubai._shared.schemas import KnowledgeMetadata, ToolResponse
 from mcp_dubai.biz.banking.tools import VALID_INDUSTRIES as BANK_INDUSTRIES
+from mcp_dubai.biz.setup_advisor.tools import VALID_INDUSTRIES as SETUP_INDUSTRIES
 from mcp_dubai.biz.tax_compliance.tools import VALID_INDUSTRIES as TAX_INDUSTRIES
 
 KNOWLEDGE: KnowledgeMetadata = KnowledgeMetadata(
-    knowledge_date="2026-09-05",
-    full_review_date="2026-04-13",
-    previous_knowledge_date="2026-04-13",
+    knowledge_date="2026-10-13",
+    full_review_date="2026-10-13",
+    previous_knowledge_date="2026-09-05",
     last_refresh_scope=(
-        "Corrected tax-plan inputs and jurisdiction assumptions; removed fixed-year and "
-        "fixed-count claims; report freshness now uses only caller-declared source domains."
+        "Full review of 2026-10-13: verified every planned tool name and argument "
+        "against the live tool schemas (all resolve, no external dataset URLs or "
+        "statistics are embedded). Fixed analyze_setup_decision accepting industries "
+        "setup_advisor rejects, and the report footer labelling full-review scopes as "
+        "targeted. Unverified: none."
     ),
     volatility="medium",
     verify_at="https://github.com/mahdi-salmanzade/MCP-Dubai",
@@ -320,7 +324,11 @@ async def synthesize_report(
         if meta.full_review_date:
             line += f"; full review {meta.full_review_date}"
         if meta.last_refresh_scope:
-            line += f"; targeted scope: {meta.last_refresh_scope}"
+            # A scope recorded on a full review is not a targeted refresh.
+            label = (
+                "review scope" if meta.full_review_date == meta.knowledge_date else "targeted scope"
+            )
+            line += f"; {label}: {meta.last_refresh_scope}"
         body_parts.append(line)
     body_parts.append("")
     body_parts.append("Always verify quoted figures with the official source before acting.")
@@ -378,6 +386,14 @@ async def analyze_setup_decision(
         return (
             ToolResponse[dict[str, object]]
             .fail(error=f"budget_aed must be >= 0, got {budget_aed}")
+            .model_dump()
+        )
+    # Step 1 forwards the industry unchanged to setup_advisor, so an industry
+    # outside its vocabulary would produce a plan whose first step must fail.
+    if industry not in SETUP_INDUSTRIES:
+        return (
+            ToolResponse[dict[str, object]]
+            .fail(error=(f"industry must be one of {sorted(SETUP_INDUSTRIES)}, got {industry!r}"))
             .model_dump()
         )
 

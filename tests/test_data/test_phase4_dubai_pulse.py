@@ -783,11 +783,13 @@ class TestRtaGtfsStaticUrl:
         assert data["archive_format"] == "7z"
         assert "py7zr" in str(data["extraction_hint"])
         assert "GTFS_20250823" in str(data["feed_version_note"])
-        assert "2026-09-05" in str(data["feed_version_note"])
+        assert "2026-10-13" in str(data["feed_version_note"])
+        # The www host returned HTTP 400 on direct requests; serve the apex.
+        assert str(data["download_url"]).startswith("https://dubaipulse.gov.ae/")
         assert "fresher" in str(data["staleness_note"])
         assert data["query_api_auth_required"] is True
         assert data["gtfs_realtime_available"] is False
-        assert result["retrieved_at"] == "2026-09-05"
+        assert result["retrieved_at"] == "2026-10-13"
 
     @pytest.mark.asyncio
     async def test_transitland_mirror_marked_dead(self) -> None:
