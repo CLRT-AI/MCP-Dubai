@@ -1,11 +1,11 @@
 {
   "domain": "tax_compliance",
-  "knowledge_date": "2026-09-28",
+  "knowledge_date": "2026-10-13",
   "full_review_date": "2026-07-25",
   "volatility": "high",
   "verify_at": "https://tax.gov.ae",
   "source_brief_section": "6.4",
-  "disclaimer": "UAE tax rules changed materially through 2025/2026. From 1 January 2026 the VAT Law amendments (FDL 16/2025), the Tax Procedures Law amendments (FDL 17/2025), and the sweetened drinks tiered excise all apply, and a new AML law (FDL 10/2025) has been in force since 14 October 2025. Small Business Relief now covers eligible tax periods ending through 31 December 2029 under Ministerial Decision 131 of 2026. The e-invoicing pilot went live on 1 July 2026; businesses with revenue at or above AED 50M must appoint an Accredited Service Provider by 30 October 2026 (Ministerial Resolution 66 of 2026). Minimum excise prices for specified tobacco and vaping products apply from 1 September 2026 under Cabinet Decision 137 of 2026. The unified late-payment penalty (Cabinet Decision 129 of 2025) took effect 14 April 2026. Always verify against the FTA and MoF portals before quoting figures. From 1 October 2026 the amended VAT Executive Regulation (Cabinet Decision 149 of 2026), FTA Decision 13 of 2026 on supplier and supply verification before input tax deduction, and FTA Decision 17 of 2026 on input tax for employee expenses all apply. FTA Decision 12 of 2026 sets Pillar Two (DMTT) registration timelines, with a 30 November 2026 deadline for fiscal years ending before 30 April 2026. Corporate Tax returns for calendar-year 2025 periods are due by 30 September 2026.",
+  "disclaimer": "UAE tax rules changed materially through 2025/2026. From 1 January 2026 the VAT Law amendments (FDL 16/2025), the Tax Procedures Law amendments (FDL 17/2025), and the sweetened drinks tiered excise all apply, and a new AML law (FDL 10/2025) has been in force since 14 October 2025. Small Business Relief now covers eligible tax periods ending through 31 December 2029 under Ministerial Decision 131 of 2026. The e-invoicing pilot went live on 1 July 2026; businesses with revenue at or above AED 50M must appoint an Accredited Service Provider by 30 October 2026 (Ministerial Resolution 66 of 2026). Ministerial Decision 168 of 2026 replaced the ASP accreditation framework from 1 October 2026. Minimum excise prices for specified tobacco and vaping products apply from 1 September 2026 under Cabinet Decision 137 of 2026. The unified late-payment penalty (Cabinet Decision 129 of 2025) took effect 14 April 2026. Always verify against the FTA and MoF portals before quoting figures. From 1 October 2026 the amended VAT Executive Regulation (Cabinet Decision 149 of 2026), FTA Decision 13 of 2026 on supplier and supply verification before input tax deduction, and FTA Decision 17 of 2026 on input tax for employee expenses all apply. FTA Decision 12 of 2026 sets Pillar Two (DMTT) registration timelines, with a 30 November 2026 deadline for fiscal years ending before 30 April 2026. The 30 September 2026 deadline for Corporate Tax returns and payment for calendar-year 2025 periods has passed; any return or payment made after it is late.",
   "currency": "AED",
   "corporate_tax": {
     "law": "Federal Decree-Law 47 of 2022",
@@ -51,10 +51,12 @@
       "current_cycle": {
         "tax_period": "Financial year ended 2025-12-31",
         "return_and_payment_due": "2026-09-30",
-        "note": "The FTA confirmed that all Taxable Persons with a financial year ended 31 December 2025, including Small Business Relief electors, must file and pay by 30 September 2026. Other year ends follow the 9-month rule.",
+        "note": "The FTA confirmed that all Taxable Persons with a financial year ended 31 December 2025, including Small Business Relief electors, had to file and pay by 30 September 2026. Other year ends follow the 9-month rule.",
         "source_urls": [
-          "https://tax.gov.ae/en/media.centre/News/federal.tax.authority.calls.on.all.persons.subject.to.corporate.tax.to.file.their.tax.returns.and.pay.the.corporate.tax.due.within.the.specified.timeframes.to.avoid.latepayment.penalties.aspx"
-        ]
+          "https://tax.gov.ae/en/media.centre/News/federal.tax.authority.calls.on.all.persons.subject.to.corporate.tax.to.file.their.tax.returns.and.pay.the.corporate.tax.due.within.the.specified.timeframes.to.avoid.latepayment.penalties.aspx",
+          "https://tax.gov.ae/en/media.centre/News/pr.2809.aspx"
+        ],
+        "deadline_status": "PASSED. The 30 September 2026 deadline has expired; returns filed or tax paid after it are late, and unpaid tax attracts the unified late-payment penalty (Cabinet Decision 129 of 2025)."
       }
     },
     "transfer_pricing": {
@@ -74,18 +76,21 @@
       "registration_status": {
         "status": "FTA Decision 12 of 2026 (issued 16 July 2026, published 4 August 2026) sets DMTT registration timelines: register within 7 months of the end of the first in-scope fiscal year, but an entity with a fiscal year ending before 30 April 2026 must register on or before 30 November 2026. A Domestic Designated Filing Entity registers on behalf of the domestic group. Ministerial Decision 133 of 2026 separately identifies Pillar Two Information Return filers. Confirm operational filing requirements with the FTA.",
         "first_return_expected_due": "2027-06-30",
-        "first_return_note": "First top-up tax return (for FY ending 31 December 2025) is expected due 30 June 2027 under an 18-month transitional window. Verify with the FTA.",
+        "first_return_note": "First top-up tax return (for FY ending 31 December 2025) is expected due 30 June 2027 under an 18-month transitional window. Not confirmed by an FTA or MoF primary source as of 2026-10-13 (the TTGREG1 guide does not state a return due date); verify with the FTA.",
         "source_urls": [
           "https://tax.gov.ae/Datafolder/Files/Pdf/2026/legislation/FTA%20Decision%20No.%2012%20of%202026%20on%20Registration%20and%20Deregistration%20Timelines%20-%2008%202026.pdf",
           "https://tax.gov.ae/en/legislation/corporate.tax.aspx",
           "https://mof.gov.ae/uae-domestic-minimum-top-up-tax/",
-          "https://www.deloitte.com/middle-east/en/services/tax/perspectives/uae-pillar-two-registration-updates.html"
+          "https://www.deloitte.com/middle-east/en/services/tax/perspectives/uae-pillar-two-registration-updates.html",
+          "https://tax.gov.ae/en/media.centre/News/federal.tax.authority.issues.new.guide.on.scope.and.registration.for.topup.tax.on.multinational.enterprises.aspx",
+          "https://tax.gov.ae/Datafolder/Files/Guides/Top-Up-Taxes/TTGREG1%20-%20Scope%20and%20Registration%20guide%20-%2008%202026.pdf"
         ],
         "registration_law": "FTA Decision 12 of 2026",
         "registration_deadline_general": "Within 7 months from the end of the first fiscal year in which the entity is in scope",
         "registration_deadline_transitional": "2026-11-30",
         "registration_deadline_transitional_applies_to": "Entities with a fiscal year ending before 2026-04-30 (for example, calendar-year 2025)",
-        "deregistration": "Apply within 6 months of ceasing to exist or of the end of the fiscal year in which the entity leaves the MNE group; entities ceasing before 30 June 2026 must apply by 31 December 2026. Out-of-scope notifications are due within 6 months of the tested fiscal year end."
+        "deregistration": "Apply within 6 months of ceasing to exist or of the end of the fiscal year in which the entity leaves the MNE group; entities ceasing before 30 June 2026 must apply by 31 December 2026. Out-of-scope notifications are due within 6 months of the tested fiscal year end.",
+        "guide": "FTA Top-up Tax Guide on Scope and Registration (TTGREG1), dated August 2026 on the FTA guides page and announced by the FTA on 7 October 2026. It restates the 30 November 2026 registration deadline for entities whose first in-scope fiscal year ends before 30 April 2026 and the 7-month rule for all other cases, and covers DDFE registration and the choice of Pillar Two Information Return filer. It does not state a Top-up Tax return due date."
       },
       "information_return": {
         "law": "Ministerial Decision 133 of 2026",
@@ -133,7 +138,7 @@
       ]
     },
     "guides_2026": {
-      "note": "June 2026 FTA publications: updated Corporate Tax Guide on Taxation of Family Foundations (CTGFF1, 10 June 2026), Education Sector VAT Guide (29 June 2026), and a Basic Tax Information Bulletin on Corporate Tax Losses (25 June 2026). Per secondary legal reporting; verify titles and dates on the FTA guides page.",
+      "note": "June 2026 FTA publications: updated Corporate Tax Guide on Taxation of Family Foundations (CTGFF1, 10 June 2026), Education Sector VAT Guide (29 June 2026), and a Basic Tax Information Bulletin on Corporate Tax Losses (25 June 2026). Per secondary legal reporting; verify titles and dates on the FTA guides page. October 2026: the FTA published the Free Zones and Designated Zones for Tax Purposes guide (TAXP010, 2 October 2026) covering Corporate Tax, VAT and Excise, and announced the Top-up Tax Guide on Scope and Registration (TTGREG1) on 7 October 2026.",
       "source_urls": [
         "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx"
       ]
@@ -425,11 +430,12 @@
     "legislation": [
       "Ministerial Decision 243 of 2025",
       "Ministerial Decision 244 of 2025",
-      "Ministerial Resolution 66 of 2026"
+      "Ministerial Resolution 66 of 2026",
+      "Ministerial Decision 168 of 2026"
     ],
     "model": "PINT AE on a Decentralized Continuous Transaction Control and Exchange (DCTCE) 5-corner model; e-invoices exchanged via accredited service providers (ASPs) and reported to the FTA through EmaraTax",
     "penalties_law": "Cabinet Decision 106 of 2025",
-    "status": "pilot phase live: the 5-corner model has been operational since July 2026 (pilot launched 2026-07-01 with a selected Taxpayer Working Group; voluntary adoption open to any business). At its 27 September 2026 Ras Al Khaimah awareness event the MoF reconfirmed the 30 October 2026 ASP appointment deadline and 1 January 2027 go-live for businesses with revenue at or above AED 50M.",
+    "status": "pilot phase live: the 5-corner model has been operational since July 2026 (pilot launched 2026-07-01 with a selected Taxpayer Working Group; voluntary adoption open to any business). The MoF (27 September 2026, Ras Al Khaimah) and the FTA (29 September 2026 joint awareness meeting in Dubai with ASPs and in-scope businesses) reconfirmed the 30 October 2026 ASP appointment deadline and 1 January 2027 go-live for businesses with revenue at or above AED 50M, and 31 March 2027 and 1 July 2027 for businesses below AED 50M. Businesses must select and contract an ASP, integrate, and then complete the EmaraTax procedures.",
     "rollout": {
       "voluntary_pilot_from": "2026-07-01",
       "mandatory_revenue_at_or_above_aed_50m_from": "2027-01-01",
@@ -454,12 +460,12 @@
     },
     "asp_register": {
       "pre_approved_provider_count": null,
-      "accredited_provider_count": 60,
-      "under_final_assessment_count": 3,
-      "as_of": "2026-09-28",
-      "status": "The official MoF page (last updated 28 September 2026) lists 60 accredited providers and 3 pre-approved providers under final accreditation assessment (up from 50 and 7 on 5 September 2026). It does not publish a separate overall pre-approved count; that count is unknown, not zero. Final assessment is not full accreditation.",
+      "accredited_provider_count": 65,
+      "under_final_assessment_count": 5,
+      "as_of": "2026-10-13",
+      "status": "The official MoF page (last updated 13 October 2026) lists 65 accredited providers and 5 pre-approved providers under final accreditation assessment (up from 60 and 3 on 28 September 2026). It does not publish a separate overall pre-approved count; that count is unknown, not zero. Final assessment is not full accreditation.",
       "register_url": "https://mof.gov.ae/en/about-us/initiatives/einvoicing/einvoicing-accredited-service-providers-asps/",
-      "criteria_note": "Accreditation criteria updated by Ministerial Resolution 56 of 2026: active Peppol-certified service providers that passed OpenPeppol conformance testing, with the PSP product operational for at least 2 years."
+      "criteria_note": "Ministerial Decision 168 of 2026 (in force 1 October 2026, announced 9 October 2026) repeals Ministerial Decision 64 of 2025 and its amendments, including Ministerial Decision 56 of 2026, and removes the pre-approval stage: providers must complete the accreditation assessment and testing before accreditation. Providers holding preliminary approval under the old framework have up to 30 days from 1 October 2026 to complete the requirements, or the approval is terminated. Providers may still use third-party Peppol Service Provider Products and outsource parts of their service while remaining responsible for compliance. The framework also covers renewal, ongoing evaluation, termination and objections."
     },
     "technical_docs": {
       "guidelines": "UAE Electronic Invoicing Guidelines V-1.1 (published 2026-06-01)",
@@ -475,7 +481,9 @@
       "https://mof.gov.ae/en/about-us/initiatives/einvoicing/einvoicing-accredited-service-providers-asps/",
       "https://mof.gov.ae/en/news/ministry-of-finance-hosts-awareness-event-in-ras-al-khaimah-on-latest-einvoicing-updates/",
       "https://tax.gov.ae",
-      "https://www.deloitte.com/middle-east/en/services/tax/perspectives/uae-e-invoicing-asp-appointment-deadline-extended-but-go-live-remains-01012027.html"
+      "https://www.deloitte.com/middle-east/en/services/tax/perspectives/uae-e-invoicing-asp-appointment-deadline-extended-but-go-live-remains-01012027.html",
+      "https://mof.gov.ae/en/news/ministry-of-finance-issues-decision-on-accreditation-of-einvoicing-service-providers-under-updated-regulatory-framework/",
+      "https://tax.gov.ae/en/media.centre/News/federal.tax.authority.organises.joint.awareness.meeting.for.accredited.service.providers.and.persons.subject.to.the.einvoicing.system.aspx"
     ]
   },
   "late_payment_penalty": {
@@ -490,6 +498,6 @@
       "https://habibalmulla.com/articles/administrative-penalties-in-the-uae-the-2025-reform-and-the-shift-toward-a-unified-tax-penalty-regime/"
     ]
   },
-  "previous_knowledge_date": "2026-09-05",
-  "last_refresh_scope": "Targeted refresh of 2026-09-28: refreshed the MoF ASP register to 60 accredited and 3 in final assessment and added the 27 September 2026 MoF reconfirmation of the e-invoicing deadlines; added Cabinet Decision 149 of 2026 amending the VAT Executive Regulation (effective 1 October 2026), FTA Decision 17 of 2026 on employee-expense input tax, the operative requirements and 1 October 2026 commencement of FTA Decision 13 of 2026, FTA Decision 12 of 2026 DMTT registration timelines (30 November 2026 transitional deadline), FTA Decision 15 of 2026 on exemption applications, and the 30 September 2026 Corporate Tax filing deadline for calendar-year 2025, all from MoF and FTA primary sources. Not re-verified: the expected 30 June 2027 first DMTT return date, transfer pricing thresholds, excise tiers and the AML, UBO and data-protection sections. Not a full re-verification of every field in this pack; full_review_date is preserved."
+  "previous_knowledge_date": "2026-09-28",
+  "last_refresh_scope": "Targeted refresh of 2026-10-13: refreshed the MoF ASP register to 65 accredited and 5 in final assessment; added Ministerial Decision 168 of 2026 replacing the ASP accreditation framework from 1 October 2026; recorded the 29 September 2026 FTA reconfirmation of the e-invoicing deadlines; marked the 30 September 2026 Corporate Tax filing deadline for calendar-year 2025 as passed; added the FTA Top-up Tax Guide on Scope and Registration (TTGREG1) and the TAXP010 designated zones guide, all from MoF and FTA primary sources. Checked with no change: the 30 November 2026 DMTT registration deadline, the 30 October 2026 ASP appointment deadline and 1 January 2027 go-live, and the FTA VAT and Corporate Tax legislation registers (no new decisions since 28 September 2026). Still unverified: the expected 30 June 2027 first DMTT return date, the VAT cash-payment threshold (no Ministerial decision published), and PDPL executive regulations. Not a full re-verification of every field in this pack; full_review_date is preserved."
 }

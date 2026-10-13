@@ -1,6 +1,6 @@
 {
   "domain": "createapps",
-  "knowledge_date": "2026-09-28",
+  "knowledge_date": "2026-10-13",
   "full_review_date": "2026-07-25",
   "volatility": "medium",
   "verify_at": "https://createapps.ae",
@@ -21,7 +21,14 @@
       "applications_total": 5800,
       "apps_launched": 55,
       "since": 2023,
-      "scope_note": "Legacy cumulative figures retained from the earlier review; the separately dated accelerator result must not be added to these totals without reconciling overlap."
+      "scope_note": "Legacy cumulative figures retained from the earlier review; the separately dated accelerator result must not be added to these totals without reconciling overlap.",
+      "cumulative_update_2026_10_07": {
+        "applications_three_championship_editions": 15564,
+        "countries": 153,
+        "source_urls": [
+          "https://mediaoffice.ae/en/news/2026/october/07-10/hamdan-bin-mohammed-launches-create-ai-agents-championship"
+        ]
+      }
     }
   },
   "programs": [
@@ -75,12 +82,12 @@
           }
         ]
       },
-      "cycle_status": "Cycle 3 is ongoing in its finalist phase. Registration closed on 28 December 2025, 12 finalists were announced on 14 April 2026, and the official structured timeline still schedules the finals for 7 October 2026 (rechecked 28 September 2026). No Cycle 4 has been announced.",
+      "cycle_status": "Cycle 3 concluded with the finals and awards ceremony on 7 October 2026. POP by Kwelio was named Dubai's App of the Year. No Cycle 4 of the Create Apps Championship has been announced: on the same day DCDE launched the Create AI Agents Championship as its successor (see the create_ai_agents_championship record).",
       "current_cycle": {
         "number": 3,
         "starts": "2025-10-12",
         "finals": "2026-10-07",
-        "status": "ongoing_finalist_phase",
+        "status": "concluded",
         "registration_status": "closed",
         "finalist_teams": 12
       },
@@ -96,9 +103,82 @@
         "finalists_announced": "2026-04-14",
         "finals": "2026-10-07"
       },
-      "official_page_consistency_note": "The page's structured Competition Timeline schedules the finals for 7 October 2026, while a stale FAQ answer says the competition concludes in April 2026. This pack treats the detailed structured timeline as current, flags the inconsistency, and recommends reconfirming the final date before travel.",
+      "official_page_consistency_note": "The finals took place on 7 October 2026, as the page's structured Competition Timeline stated; the stale FAQ answer saying the competition concludes in April 2026 was wrong and was still on the page on 13 October 2026, as was an outdated App Olympics 2024 banner.",
       "source_url": "https://createapps.ae/en/create-apps-championship",
-      "verified_as_of": "2026-09-28"
+      "verified_as_of": "2026-10-13",
+      "cycle_3_results": {
+        "finals_held_on": "2026-10-07",
+        "venue": "Emirates Towers Boulevard, Dubai",
+        "entries_this_edition": 9754,
+        "winners": [
+          {
+            "category": "Best Youth-made App",
+            "app": "Ettan Ehsan",
+            "description": "Gamified learning platform"
+          },
+          {
+            "category": "Most Impactful App",
+            "app": "RUSH",
+            "description": "Group travel marketplace"
+          },
+          {
+            "category": "Most Innovative App",
+            "app": "LiaPay",
+            "description": "AI financial wellness assistant"
+          },
+          {
+            "category": "Longevity App of the Year",
+            "app": "POP by Kwelio",
+            "description": "Medication-adherence app"
+          }
+        ],
+        "dubai_app_of_the_year": "POP by Kwelio",
+        "cumulative_three_editions": {
+          "applications": 15564,
+          "countries": 153
+        },
+        "source_urls": [
+          "https://mediaoffice.ae/en/news/2026/october/07-10/hamdan-bin-mohammed-launches-create-ai-agents-championship"
+        ],
+        "verified_as_of": "2026-10-13"
+      },
+      "source_urls": [
+        "https://createapps.ae/en/create-apps-championship",
+        "https://mediaoffice.ae/en/news/2026/october/07-10/hamdan-bin-mohammed-launches-create-ai-agents-championship"
+      ]
+    },
+    {
+      "id": "create_ai_agents_championship",
+      "name": "Create AI Agents Championship",
+      "type": "global_competition",
+      "launched_on": "2026-10-07",
+      "replaces": "Create Apps Championship",
+      "categories": [
+        "Best Societal AI Agent",
+        "Best Personal AI Agent",
+        "Best Business AI Agent",
+        "Best Youth AI Agent (lead participant under 21 at registration)"
+      ],
+      "prize_per_category_aed": 550000,
+      "prize_per_category_usd": 150000,
+      "ai_agent_of_the_year_aed": 1000000,
+      "prize_pool_note": "Dubai Media Office cites a pool exceeding AED 2.5 million: AED 550,000 for each of four category winners, plus AED 1 million and the AI Agent of the Year title for one of them. The official page states USD 150,000 per category and does not state the extra amount.",
+      "eligibility_summary": "Open worldwide to individuals and teams (up to 6 members), technical or non-technical, no minimum age; free to enter; ideas, prototypes and early MVPs accepted; submissions in English. Entrants submit an AI-agent prototype, pitch deck and demo video.",
+      "registration_status": "open",
+      "registration_opened": "2026-10-07",
+      "registration_close_note": "Dubai Media Office and the official FAQ say registration closes in December 2026; the official page timeline says January 2027. Confirm the deadline on the official page before relying on either.",
+      "indicative_timeline": {
+        "submission": "2027-01",
+        "semi_final_pitch_day": "2027-03",
+        "finalists_announced": "2027-03",
+        "grand_final": "first week of May 2027"
+      },
+      "url": "https://www.dubaichamberdigital.com/en/create-ai-agents",
+      "source_urls": [
+        "https://mediaoffice.ae/en/news/2026/october/07-10/hamdan-bin-mohammed-launches-create-ai-agents-championship",
+        "https://www.dubaichamberdigital.com/en/create-ai-agents"
+      ],
+      "verified_as_of": "2026-10-13"
     },
     {
       "id": "emirati_training_academy",
@@ -161,7 +241,7 @@
       "Longevity and growth potential"
     ],
     "application_url": "https://createapps.ae/en/registration",
-    "tip": "Cycle 3 registration and submissions are closed. The current structured timeline schedules the finals for 7 October 2026, although a stale FAQ still says April 2026; finalists should reconfirm the date directly before travel."
+    "tip": "Create Apps Championship Cycle 3 is complete (finals 7 October 2026) and no Cycle 4 is announced. New entrants should look at the successor Create AI Agents Championship, open for registration since 7 October 2026 at https://www.dubaichamberdigital.com/en/create-ai-agents."
   },
   "contact": {
     "email": "via createapps.ae contact form (Cloudflare-obfuscated)",
@@ -173,6 +253,6 @@
     "sitemap": "https://createapps.ae/sitemap.xml",
     "notes": "Liferay-style sitemap with 13 per-layout sub-sitemaps. No public REST API or RSS feed."
   },
-  "previous_knowledge_date": "2026-09-05",
-  "last_refresh_scope": "Targeted refresh of 2026-09-28: rechecked the official Championship page ahead of the finals; the 7 October 2026 final, closed registration, USD 720,000 pool and four categories are unchanged, and no Cycle 4 announcement or winners exist yet. The stale April 2026 FAQ answer is still flagged. Not a full re-verification of every field in this pack; full_review_date is preserved."
+  "previous_knowledge_date": "2026-09-28",
+  "last_refresh_scope": "Targeted refresh of 2026-10-13: recorded that Create Apps Championship Cycle 3 concluded with the 7 October 2026 finals and added the four category winners, Dubai App of the Year and entry totals from the Dubai Media Office release; added the successor Create AI Agents Championship launched the same day (categories, prizes, eligibility, registration window with the December 2026 versus January 2027 inconsistency flagged); rewrote the submission tip accordingly. Emirati Training Academy and Learning Lab were not re-verified. Not a full re-verification of every field in this pack; full_review_date is preserved."
 }

@@ -1,46 +1,51 @@
 {
   "domain": "free_zones",
-  "knowledge_date": "2026-09-28",
-  "full_review_date": "2026-07-02",
+  "knowledge_date": "2026-10-13",
+  "full_review_date": "2026-10-13",
   "volatility": "high",
   "verify_at": "https://www.dubai.ae/investing/starting-a-business/free-zones-in-dubai",
   "source_brief_section": "6.2",
-  "disclaimer": "Free zone pricing is indicative and changes annually. Verify with the official free zone website before quoting figures to a founder. The canonical authority links added on 2026-08-14 identify primary sources but do not constitute a full re-verification of every price, visa quota, office rule, or banking field.",
+  "disclaimer": "Free zone pricing is indicative and changes annually. Most zones no longer publish a licence tariff, so several figures in this pack are dated historical snapshots that could not be re-confirmed on 2026-10-13 (see each record's price_status and price_note). Verify with the official free zone website or a written quotation before quoting figures to a founder; visa, premises, establishment card and service fees are usually extra.",
   "currency": "AED",
   "renewal_note": "Renewal fees depend on the zone, activity, premises, visa package and any introductory subsidy. Do not infer a universal renewal percentage from the indicative historical prices in this pack.",
   "freezone_to_mainland": {
     "name": "Free Zone Mainland Operating Permit",
     "legislation": "Dubai Executive Council Resolution No. 11 of 2025",
-    "status": "Fully operational in 2026. Free zone companies can obtain DET permits or licences to operate onshore in mainland Dubai.",
+    "status": "Operational. Under Resolution 11 of 2025 DET may issue a branch licence within the Emirate, a licence for a branch operating out of the free zone, or a temporary permit. On 8 October 2025 DET (DBLC) and the Dubai Free Zones Council launched the Free Zone Mainland Operating Permit (the temporary-permit route) for eligible free zone companies holding a Dubai Unified Licence. No DET or Dubai Media Office update to the permit terms was found between that launch and 2026-10-13.",
     "launched": "2025-10-08",
-    "apply_via": "Invest in Dubai platform (digital application; requires a Dubai Unified Licence)",
+    "apply_via": "Invest in Dubai platform (fully digital application; requires a Dubai Unified Licence)",
     "permit_types": [
       {
         "type": "branch_licence",
-        "fee_aed": 10000,
-        "period": "per year"
+        "fee_aed": null,
+        "period": "1 year, renewable for the same period",
+        "fee_note": "Article 5 licence for a branch within the Emirate: the Resolution sets no amount; prescribed DET fees apply under applicable legislation. Obtain a DET quote."
       },
       {
         "type": "remote_branch_licence",
         "fee_aed": 10000,
-        "period": "per year"
+        "period": "1 year, renewable for the same period",
+        "fee_note": "Article 12(1): AED 10,000 per year to issue or renew a licence for a branch operating out of the free zone."
       },
       {
         "type": "temporary_permit",
         "fee_aed": 5000,
-        "period": "6 months, renewable at the same fee"
+        "period": "up to 6 months, renewable at the same fee",
+        "fee_note": "Article 12(2): AED 5,000 to issue or renew. Marketed by DET as the Free Zone Mainland Operating Permit (6 months, AED 5,000)."
       }
     ],
-    "phase_one_scope": "Non-regulated activities only (tech, consultancy, design, professional services, trading). Regulated sectors (finance, healthcare, education, real estate) are deferred to a later phase.",
+    "phase_one_scope": "Per the 8 October 2025 DET launch, the Operating Permit's initial phase covers non-regulated activities (technology, consultancy, design, professional services, trading). Regulated sectors are planned for a later phase; no extension to regulated sectors had been announced as of 2026-10-13.",
     "regularisation_deadline": "2026-03-21",
-    "regularisation_status": "Article 13 required existing free zone establishments conducting activity in mainland Dubai to regularise within one year from the Resolution's effective date. Article 15 made the Resolution effective on publication in Official Gazette issue 707, published 21 March 2025, producing a 21 March 2026 deadline. The Director General may grant one extension for the same period where necessary; this pack does not assert that an extension is automatic or that a particular establishment received one. Confirm current status with DET before relying on the deadline.",
-    "tax_note": "Keep separate financial records for mainland activities. Corporate-tax treatment depends on QFZP status, income classification and any domestic permanent establishment; the permit does not make all mainland-sourced revenue automatically taxable at 9%.",
+    "regularisation_status": "Article 13 required existing free zone establishments conducting activity in mainland Dubai to regularise within one year from the Resolution's effective date. Article 15 made the Resolution effective on publication in Official Gazette issue 707, published 21 March 2025 (re-checked 2026-10-13), producing a 21 March 2026 deadline; some law-firm commentary uses the 3 March 2025 issue date instead. The Director General may grant one extension for the same period where necessary; no public DET announcement of an extension was found as of 2026-10-13, and this pack does not assert that an extension is automatic or that a particular establishment received one. Confirm current status with DET before relying on the deadline.",
+    "tax_note": "Keep separate financial records for mainland activities. DET's launch statement says related mainland revenue is subject to 9% corporate tax; the exact treatment still depends on QFZP status, income classification and any domestic permanent establishment, so do not assume every dirham of mainland-sourced revenue is taxed the same way.",
     "source_urls": [
       "https://www.mediaoffice.ae/en/news/2025/october/08-10/dubai-launches-free-zone-mainland-operating-permit",
       "https://dlp.dubai.gov.ae/Legislation%20Reference/2025/Executive%20Council%20Resolution%20No.%20(11)%20of%202025%20Regulating%20the%20Conduct%20of%20Free%20Zone%20Establishments%E2%80%99%20Activities.html",
       "https://legal.dubai.gov.ae/OfficialGazette/2025/OGD-2025-707.pdf",
       "https://slc.dubai.gov.ae/en/legislation-portal/detail?id=0900000a80372d09"
-    ]
+    ],
+    "excluded_entities": "Article 2: the Resolution does not apply to financial establishments licensed to operate in the DIFC.",
+    "verified_as_of": "2026-10-13"
   },
   "developments_2026": [
     {
@@ -48,9 +53,11 @@
       "zone_id": "dso_dtec",
       "date": "2026-01-22",
       "headline": "District IO innovation district launched at DSO/DIEZ (AED 12.8bn expansion)",
-      "summary": "AED 12.8 billion of expansion projects for Dubai Silicon Oasis under DIEZ. District IO (AED 11bn, 25 energy-efficient buildings including 18 commercial, phase one from 2026, phase two 2027) targets smart mobility, 3D printing, robotics, AI, quantum, Web3 and X-Tech, with incentives including end-to-end setup, funding support, flexible leasing and RegLab product testing without operational licences. Block 14 (AED 1.8bn, transit-oriented development near the Metro Blue Line) completes 2029.",
+      "summary": "AED 12.8 billion of expansion projects for Dubai Silicon Oasis under DIEZ, launched by Sheikh Mohammed bin Rashid on 22 January 2026. District IO (AED 11bn; reported as 25 LEED-compliant buildings, 18 commercial; phase one office, R&D and retail in 2026, phase two hospitality and innovation facilities in 2027) targets smart mobility, 3D printing, robotics, AI, quantum, Web3 and X-Tech, with incentives including end-to-end setup, funding support, flexible leasing and RegLab product testing. Block 14 (AED 1.8bn, transit-oriented development near the Metro Blue Line) completes 2029. Building counts differ slightly between outlets.",
       "tag": "official",
       "source_urls": [
+        "https://mediaoffice.ae/en/news/2026/january/22-01/mohammed-bin-rashid-dubai-silicon",
+        "https://www.wam.ae/en/article/bycu88a-mohammed-bin-rashid-launches-aed128-billion",
         "https://www.thenationalnews.com/news/uae/2026/01/22/sheikh-mohammed-bin-rashid-launches-dh128-billion-dubai-silicon-oasis-expansion-plan/",
         "https://www.khaleejtimes.com/uae/mohammed-bin-rashid-launches-dh128-billion-strategic-expansion-projects-for-dubai-silicon-oasis"
       ]
@@ -62,9 +69,10 @@
       "headline": "Meydan launches fully remote non-residency setup with a guaranteed corporate account via MPlus",
       "summary": "Fully remote company formation: founders anywhere can obtain a UAE trade licence online in as little as 60 minutes (24 hours for complex structures) across 2,500+ activities, then open a corporate bank account via Meydan's MPlus banking team (26+ banking partners, up to 17 currencies) without travelling to the UAE. Marketed as a guaranteed bank account with the licence.",
       "tag": "single_source",
-      "caveat": "Single-source Gulf News company-news item. Treat the guaranteed-account claim as marketing until verified directly with Meydan.",
+      "caveat": "Originally a single-source Gulf News company-news item. On 2026-10-13 Meydan's official launch page listed a Non-Resident Licence at AED 12,500, confirming the remote-setup product, but the guaranteed-bank-account claim was not confirmed on an official Meydan page; treat it as marketing.",
       "source_urls": [
-        "https://gulfnews.com/gn-focus/company-news/meydan-free-zone-launches-non-residency-business-setup-with-guaranteed-corporate-bank-account-1.500479010"
+        "https://gulfnews.com/gn-focus/company-news/meydan-free-zone-launches-non-residency-business-setup-with-guaranteed-corporate-bank-account-1.500479010",
+        "https://www.meydanfz.ae/launch-your-business"
       ]
     },
     {
@@ -72,9 +80,10 @@
       "zone_id": "dubai_south",
       "date": "2026-04-17",
       "headline": "Dubai South announces 2026 incentive package",
-      "summary": "New incentives covering support for new company formation, facilitation of licence renewals, and exemptions from late-renewal fines. Detailed financial terms were not publicly disclosed; benefits are applied case by case on application to the free zone authority.",
-      "tag": "single_source",
+      "summary": "Dubai South's newsroom lists three incentives: support for new company formation, facilitation of licence renewals, and exemption from late-renewal fines, framed under the Dubai Free Zones Council's competitiveness push. No financial terms, eligibility rules or end date are published; eligibility is checked case by case via 800 SOUTH.",
+      "tag": "official",
       "source_urls": [
+        "https://www.dubaisouth.ae/en/newsroom/dubai-south-introduces-new-incentives-to-sustain-economic-momentum",
         "https://www.middleeastbriefing.com/news/dubai-south-free-zone-rolls-out-new-incentives/"
       ]
     },
@@ -86,6 +95,7 @@
       "summary": "DMCC signed an MoU with Tether covering blockchain and payment infrastructure within DMCC, tokenisation advisory and ecosystem programmes. DMCC reports 26,000+ member companies including 4,000+ tech firms; the Crypto Centre crossed 700 members (38% YoY growth). DMCC also announced a Crypto.com commodities-tokenisation partnership and launched DMCC Quantum in H1 2026.",
       "tag": "official",
       "source_urls": [
+        "https://dmcc.ae/latest-news/dmcc-and-tether-sign-mou-to-advance-blockchain-tokenisation-and-digital-finance-collaboration",
         "https://gulfbusiness.com/en/2026/blockchain/dmcc-signs-blockchain-and-tokenisation-partnership-with-tether/",
         "https://dmcc.ae/latest-news/dmcc-and-crypto.com-strike-partnership-to-advance-commodities-tokenisation-and-digital-trade-infrastructure"
       ]
@@ -99,6 +109,18 @@
       "tag": "official",
       "source_urls": [
         "https://www.thenationalnews.com/business/economy/2026/05/06/new-defence-free-zone-to-be-set-up-in-abu-dhabi/"
+      ]
+    },
+    {
+      "id": "diez_relief_measures_2026",
+      "zone_id": "dafza",
+      "date": "2026-04-09",
+      "headline": "DIEZ launches temporary economic relief measures for DAFZ, DSO and Dubai CommerCity",
+      "summary": "Announced via the Dubai Media Office: rent held stable at contract renewal, waiver of certain administrative penalties including late licence renewal fines, monthly rent instalments with instalment fees waived, three-month deferral of shareholder-amendment and activity-amendment fees, and waiver of restructuring and authorised-capital amendment fees. Linked to Dubai's AED 1 billion facilitation package (from 1 April 2026 for three to six months). Waivers run 'until conditions stabilise'; no end date or extension was found as of 2026-10-13, so confirm current status with DIEZ.",
+      "tag": "official",
+      "source_urls": [
+        "https://mediaoffice.ae/en/news/2026/april/09-04/dubai-integrated-economic-zones-authority-launches-set-of-economic-measures",
+        "https://gulfnews.com/business/markets/economic-relief-measures-rolled-out-for-3-dubai-free-zones-1.500501568"
       ]
     }
   ],
@@ -122,7 +144,8 @@
         "currency": "AED",
         "as_of": "2025-Q4",
         "price_status": "dated_indicative_snapshot",
-        "price_note": "On 2026-09-28 the previously cited IFZA cost page returned HTTP 404 and the official IFZA setup pages checked publish no licence price (enquiry or partner quote only). The AED 12,900 / 12,500 figures are a historical 2025-Q4 snapshot, not a current IFZA quote."
+        "price_note": "Re-checked 2026-10-13: IFZA's official Set Up Your Business page still publishes no licence price or visa tiers (consultation and tailored proposal only). The AED 12,900 / 12,500 figures are an unverified historical 2025-Q4 snapshot, not a current IFZA quote.",
+        "checked_as_of": "2026-10-13"
       },
       "office": {
         "options": [
@@ -131,12 +154,13 @@
           "private"
         ],
         "virtual_allowed": true,
-        "physical_required": false
+        "physical_required": false,
+        "notes": "IFZA's official setup page says virtual workplaces are allowed for some free zone companies; office solutions are set in the tailored proposal."
       },
       "visas": {
         "min": 0,
         "max": 6,
-        "tiers_described": "Packages from 0 (zero-visa) up to 6 visas. Tiered by package level."
+        "tiers_described": "Packages from 0 (zero-visa) up to 6 visas per 2025-Q4 market packages. IFZA's official pages do not publish tiers; unverified as of 2026-10-13."
       },
       "banking": {
         "acceptance": "moderate",
@@ -172,22 +196,23 @@
         "renewal_aed": 12500,
         "currency": "AED",
         "as_of": "2025-Q4",
-        "price_status": "dated_indicative_snapshot",
-        "verified_note": "Meydan's official launch page still advertised the AED 12,500 per year base licence package on 2026-09-28 (licence, registration, digital application and portal access; visas, medical, Emirates ID and office upgrades extra), a Fawri instant licence at AED 15,000, and up to 15% off multi-year licences.",
-        "verified_as_of": "2026-09-28"
+        "price_status": "official_published_price",
+        "verified_note": "Meydan's official launch page, re-checked 2026-10-13, advertises company formation from AED 12,500 per year (licence, registration, digital application, portal access and a flexi desk), a Fawri instant licence at AED 15,000, a Non-Resident Licence at AED 12,500, and up to 15% off multi-year licences. Visas, medical, Emirates ID and office upgrades are extra. Renewal at AED 12,500 is not separately confirmed.",
+        "verified_as_of": "2026-10-13"
       },
       "office": {
         "options": [
-          "virtual",
-          "flexi"
+          "flexi",
+          "private"
         ],
-        "virtual_allowed": true,
-        "physical_required": false
+        "virtual_allowed": false,
+        "physical_required": false,
+        "notes": "A flexi desk is bundled into every licence at no separate charge, so no separate physical lease is needed to start; office upgrades are add-ons."
       },
       "visas": {
         "min": 0,
-        "max": 3,
-        "tiers_described": "Packages from 0 to 3 visas, scaled by tier."
+        "max": 6,
+        "tiers_described": "Base setup has 0 visa allocations; allocations are pay-as-you-go at AED 1,850 each, up to 6 per licence (Meydan official cost breakdown, updated 2026-06-30)."
       },
       "banking": {
         "acceptance": "difficult",
@@ -201,7 +226,8 @@
       ],
       "website": "https://www.meydanfz.ae",
       "source_urls": [
-        "https://www.meydanfz.ae/launch-your-business"
+        "https://www.meydanfz.ae/launch-your-business",
+        "https://www.meydanfz.ae/blog/meydan-free-zone-company-setup-cost-breakdown"
       ]
     },
     {
@@ -222,7 +248,9 @@
         "currency": "AED",
         "as_of": "2025-Q4",
         "notes": "License from approximately AED 10,000. General Trading variant from approximately AED 20,000.",
-        "price_status": "dated_indicative_snapshot"
+        "price_status": "dated_indicative_snapshot",
+        "price_note": "Not re-confirmable on an official page on 2026-10-13 (no published tariff); kept as an unverified historical snapshot dated 2025-Q4. Dubai South's official site publishes no licence prices (call-back form only); third-party package figures conflict.",
+        "checked_as_of": "2026-10-13"
       },
       "office": {
         "options": [
@@ -249,13 +277,14 @@
       ],
       "website": "https://www.dubaisouth.ae",
       "source_urls": [
-        "https://www.dubaisouth.ae/en"
+        "https://www.dubaisouth.ae/en",
+        "https://www.dubaisouth.ae/en/business-setup"
       ]
     },
     {
       "id": "dafza",
       "name": "DAFZA",
-      "full_name": "Dubai Airport Free Zone Authority",
+      "full_name": "Dubai Airport Freezone (DAFZ, formerly DAFZA)",
       "location": "Adjacent to Dubai International Airport (DXB)",
       "sector": "trade_logistics",
       "tags": [
@@ -269,7 +298,9 @@
         "renewal_aed": 15020,
         "currency": "AED",
         "as_of": "2025-Q4",
-        "price_status": "dated_indicative_snapshot"
+        "price_status": "dated_indicative_snapshot",
+        "price_note": "Not re-confirmable on an official page on 2026-10-13 (no published tariff); kept as an unverified historical snapshot dated 2025-Q4. DAFZ publishes no tariff; its homepage could not be read and consultancy estimates conflict widely.",
+        "checked_as_of": "2026-10-13"
       },
       "office": {
         "options": [
@@ -294,7 +325,7 @@
         "logistics",
         "premium positioning"
       ],
-      "website": "https://www.dafza.ae",
+      "website": "https://www.dafz.ae/en",
       "source_urls": [
         "https://www.dafz.ae/en"
       ]
@@ -316,7 +347,7 @@
         "renewal_aed": null,
         "currency": "AED",
         "as_of": "2025-Q4",
-        "notes": "Cost varies by Dtec membership tier and license package. Use Dtec's own pricing page for an exact quote.",
+        "notes": "Cost varies by Dtec membership tier and licence package. Dtec's site lists hot desks, dedicated desks and private offices but did not expose prices on 2026-10-13; use Dtec's Plans and Pricing section or ask for a quote.",
         "price_status": "quote_required"
       },
       "office": {
@@ -344,7 +375,8 @@
       ],
       "website": "https://dtec.ae",
       "source_urls": [
-        "https://dtec.ae/"
+        "https://dtec.ae/",
+        "https://dtec.ae/coworking/#pricing"
       ]
     },
     {
@@ -364,7 +396,7 @@
         "renewal_aed": null,
         "currency": "AED",
         "as_of": "2025-Q4",
-        "notes": "Pricing varies by sub-cluster (DIC vs DMC vs DKP) and package tier. Get a quote directly from TECOM.",
+        "notes": "Pricing varies by business district and package. TECOM Group's setup page (re-checked 2026-10-13) publishes no prices and covers 10 districts: Dubai Internet City, Dubai Media City, Dubai Design District, Dubai Industrial City, Dubai Science Park, Dubai International Academic City, Dubai Knowledge Park, Dubai Studio City, Dubai Production City and Dubai Outsource City. Get a quote directly.",
         "price_status": "quote_required"
       },
       "office": {
@@ -391,7 +423,7 @@
         "education",
         "training institutes"
       ],
-      "website": "https://tecom.ae",
+      "website": "https://tecomgroup.ae",
       "source_urls": [
         "https://tecomgroup.ae/how-to-setup",
         "https://dda.gov.ae/en/about/tecom-group"
@@ -416,11 +448,11 @@
         "as_of": "2025-Q4",
         "notes": "Basic license approximately AED 35,484 in year one. Per-visa fees are charged on top, so a 3-visa setup is materially higher than the headline figure.",
         "price_status": "dated_indicative_snapshot",
-        "official_range_note": "DMCC's official set-up page, checked 2026-09-28, states initial setup costs typically range from AED 10,345 to AED 84,515 depending on business type, licence duration and office space; registration takes about 10 working days. The AED 35,484 figure remains a dated 2025-Q4 package snapshot.",
+        "official_range_note": "DMCC's official set-up page, re-checked 2026-10-13, states initial setup costs typically range from AED 10,345 to AED 84,515 depending on licence duration and office space; registration takes about 10 working days. The AED 35,484 / 30,000 figures remain an unverified dated 2025-Q4 package snapshot.",
         "official_range_aed": {
           "min": 10345,
           "max": 84515,
-          "as_of": "2026-09-28"
+          "as_of": "2026-10-13"
         }
       },
       "office": {
@@ -430,12 +462,12 @@
         ],
         "virtual_allowed": false,
         "physical_required": true,
-        "notes": "Flexi-desk minimum. Private office unlocks higher visa quota."
+        "notes": "Options range from flexi-desks and serviced offices to private office space; every company needs a registered DMCC office address. Visa eligibility depends on office space and licence type."
       },
       "visas": {
         "min": 1,
         "max": 999,
-        "tiers_described": "Visa quota scales with office size. No hard cap for large offices."
+        "tiers_described": "Visa quota is tied to office space and licence type (DMCC official set-up page, 2026-10-13). No fixed cap published."
       },
       "banking": {
         "acceptance": "easy",
@@ -472,9 +504,9 @@
         "renewal_aed": 44070,
         "renewal_usd": 12000,
         "currency": "USD",
-        "as_of": "2026-04-13",
-        "subsidy_notes": "USD 1,500 applies to years 1 and 2. Subsidised pricing extends up to 5 years for some cohorts. Standard pricing thereafter is approximately USD 12,000 per year.",
-        "price_status": "dated_indicative_snapshot"
+        "as_of": "2026-10-13",
+        "subsidy_notes": "DIFC's official page (re-checked 2026-10-13) states the licence is subsidised for 2 to 5 years at USD 1,500 per year. The approximately USD 12,000 standard annual fee is not published on the official page; it comes from 2020 law-firm alerts and is an unverified historical figure.",
+        "price_status": "official_published_price"
       },
       "office": {
         "options": [
@@ -483,12 +515,12 @@
         ],
         "virtual_allowed": false,
         "physical_required": true,
-        "notes": "DIFC physical presence is mandatory. Flexi-desk minimum. No virtual-only setup."
+        "notes": "Applicants must procure space in DIFC after initial approval (official page). Flexi-desk minimum. No virtual-only setup."
       },
       "visas": {
         "min": 0,
         "max": 4,
-        "tiers_described": "Up to 4 visas on a flexi-desk. More requires a private office in DIFC."
+        "tiers_described": "Up to 4 visas on desk space per 2020 launch coverage; DIFC's official page only says visas are discounted. Unverified as of 2026-10-13. More requires a private office in DIFC."
       },
       "banking": {
         "acceptance": "easy",
@@ -510,7 +542,8 @@
       "website": "https://www.difc.com/business/establish-a-business/innovation-licence",
       "source_urls": [
         "https://www.difc.com/business/establish-a-business/innovation-licence"
-      ]
+      ],
+      "restrictions_note": "The restrictions list is derived from DIFC's regulated-activity framework; DIFC's Innovation Licence page itself does not list exclusions."
     },
     {
       "id": "difc_full",
@@ -528,7 +561,7 @@
         "initial_aed": null,
         "renewal_aed": null,
         "currency": "USD",
-        "as_of": "2026-04-13",
+        "as_of": "2026-10-13",
         "notes": "Pricing depends on DFSA category and is materially higher than the Innovation Licence. Get a direct quote from DIFC.",
         "price_status": "quote_required"
       },
@@ -580,17 +613,18 @@
         "renewal_aed": null,
         "currency": "AED",
         "as_of": "2025-Q4",
-        "notes": "Pricing varies by activity and warehouse footprint. Get a quote directly from JAFZA.",
+        "notes": "JAFZA publishes no price list; its company-formation page points to a cost calculator. No minimum share capital for an FZE or FZCO. Get a quote directly from JAFZA.",
         "price_status": "quote_required"
       },
       "office": {
         "options": [
+          "coworking",
           "private",
           "warehouse"
         ],
         "virtual_allowed": false,
         "physical_required": true,
-        "notes": "JAFZA explicitly prohibits pure virtual offices. Founders looking for cheap-no-office should look at IFZA or Meydan instead."
+        "notes": "A lease agreement must be in place at company set-up (JAFZA official page). Facility types include land, warehouses, offices, showrooms and co-working workstations. Founders looking for cheap no-office setups should look at IFZA or Meydan instead."
       },
       "visas": {
         "min": 1,
@@ -653,7 +687,7 @@
         "notes": "Sector-specific. Healthcare banks are comfortable; generalist banks may want extra documentation."
       },
       "restrictions": [
-        "Healthcare activities only"
+        "Healthcare and wellness focus; supporting commercial activities (e.g. retail, F&B) are also licensed. Clinical facilities and professionals need separate healthcare regulatory licensing."
       ],
       "best_for": [
         "clinics",
@@ -676,14 +710,17 @@
         "film",
         "tv",
         "broadcast",
-        "media_production"
+        "media_production",
+        "printing",
+        "publishing",
+        "packaging"
       ],
       "license": {
         "initial_aed": null,
         "renewal_aed": null,
         "currency": "AED",
         "as_of": "2025-Q4",
-        "notes": "Pricing varies by activity. Get a quote directly. Flagged as unverified in the research.",
+        "notes": "Pricing varies by activity and is not published (TECOM Group districts). Get a quote directly.",
         "price_status": "quote_required"
       },
       "office": {
@@ -707,13 +744,17 @@
       "best_for": [
         "film production",
         "broadcast",
-        "media studios"
+        "media studios",
+        "printing",
+        "publishing",
+        "packaging"
       ],
       "website": "https://www.dpc.ae",
       "source_urls": [
         "https://dpc.ae/",
-        "https://dda.gov.ae/en/about/tecom-group"
-      ]
+        "https://tecomgroup.ae/how-to-setup"
+      ],
+      "sector_note": "Dubai Production City (TECOM Group) targets production, printing, publishing and packaging and offers sound stages and boutique studios; Dubai Studio City targets film, TV and broadcast."
     }
   ],
   "offshore": [
@@ -733,7 +774,9 @@
       "website": "https://www.jafza.ae",
       "source_urls": [
         "https://www.jafza.ae/business-setup/company-formation/"
-      ]
+      ],
+      "price_status": "dated_indicative_snapshot",
+      "price_note": "Not re-confirmable on an official page on 2026-10-13 (no published tariff); kept as an unverified historical snapshot dated 2025-Q4. JAFZA's official company-formation page confirms offshore companies (one or more shareholders) but publishes no fee."
     },
     {
       "id": "rak_icc",
@@ -750,9 +793,11 @@
       "website": "https://www.rakicc.com",
       "source_urls": [
         "https://www.rakicc.com/"
-      ]
+      ],
+      "price_status": "dated_indicative_snapshot",
+      "price_note": "Not re-confirmable on an official page on 2026-10-13 (no published tariff); kept as an unverified historical snapshot dated 2025-Q4. The RAK ICC site blocked automated access. Secondary 2026 sources cite a registry incorporation fee of about AED 3,250 for one year excluding registered-agent fees; this is not confirmed on an official RAK ICC page."
     }
   ],
-  "previous_knowledge_date": "2026-09-05",
-  "last_refresh_scope": "Targeted refresh of 2026-09-28: re-checked official pricing pages for IFZA (old cost page now 404; no published price, snapshot relabelled and source links replaced), Meydan (AED 12,500 base package and AED 15,000 Fawri licence confirmed) and DMCC (official AED 10,345 to 84,515 setup range added). No zone-level promotion with a dated expiry was found in this pack. Other zones, visa quotas, renewal pricing and the mainland-permit regularisation status were not re-quoted. Not a full re-verification; full_review_date is preserved."
+  "previous_knowledge_date": "2026-09-28",
+  "last_refresh_scope": "Full review of 2026-10-13: re-checked every zone record, the offshore section, freezone_to_mainland and developments_2026 against official zone sites, the Dubai Legislation Portal text of Resolution 11 of 2025, Official Gazette 707 and the Dubai Media Office. Changes: mainland permit fees corrected per Article 12 (AED 10,000 per year applies to the branch operating out of the free zone; the in-Emirate branch licence fee is not set by the Resolution, now null) and DIFC financial-entity exclusion added; Meydan visa cap 3 to 6 (AED 1,850 per allocation) and flexi desk bundled; DIFC Innovation subsidy period updated to 2 to 5 years at USD 1,500; DMCC official AED 10,345 to 84,515 range re-confirmed; DPC sector widened to printing, publishing and packaging; DHCC restriction refined; JAFZA office rule aligned to official lease requirement; dead DAFZA and TECOM website domains replaced; Dubai South incentives upgraded to official; DIEZ April 2026 relief measures added; official Media Office, WAM and DMCC sources added. Unverified (kept as dated snapshots): IFZA, Dubai South, DAFZA and DMCC package prices, all renewal prices except DIFC's subsidised fee, DIFC's USD 12,000 standard fee and 4-visa desk allowance, IFZA and other zone visa caps not published officially, JAFZA Offshore and RAK ICC setup costs, and all banking-acceptance ratings (founder reports). No regularisation-deadline extension or regulated-sector phase was found."
 }

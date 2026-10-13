@@ -68,7 +68,7 @@ class TestIpTrademark:
         assert gcc["new_unitary_gcc_applications_accepted"] is False
         assert gcc["unitary_filing_stopped_on"] == "2021-01-06"
         assert "UAE national route" in gcc["uae_filing_note"]
-        assert ip_tools.KNOWLEDGE.knowledge_date == "2026-09-05"
+        assert ip_tools.KNOWLEDGE.knowledge_date == "2026-10-13"
 
     @pytest.mark.asyncio
     async def test_ip_protection_invalid_type(self) -> None:
@@ -152,14 +152,18 @@ class TestCreateApps:
         assert key_dates["finals"] == "2026-10-07"
 
     @pytest.mark.asyncio
-    async def test_cycle_is_ongoing_but_registration_is_closed(self) -> None:
+    async def test_cycle_3_concluded_with_winners(self) -> None:
         result = await createapps_tools.createapps_championship()
         data = result["data"]
         assert isinstance(data, dict)
         championship = data["championship"]
         assert isinstance(championship, dict)
-        assert "ongoing" in championship["cycle_status"].lower()
-        assert championship["current_cycle"]["status"] == "ongoing_finalist_phase"
+        assert "concluded" in championship["cycle_status"].lower()
+        assert championship["current_cycle"]["status"] == "concluded"
+        results = championship["cycle_3_results"]
+        assert results["finals_held_on"] == "2026-10-07"
+        assert results["dubai_app_of_the_year"] == "POP by Kwelio"
+        assert len(results["winners"]) == 4
         assert championship["current_cycle"]["registration_status"] == "closed"
         assert "next_cycle" not in championship
         assert "stale FAQ" in championship["official_page_consistency_note"]

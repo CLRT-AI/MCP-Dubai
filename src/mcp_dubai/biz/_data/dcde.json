@@ -1,7 +1,7 @@
 {
   "domain": "dcde",
-  "knowledge_date": "2026-09-28",
-  "full_review_date": "2026-04-13",
+  "knowledge_date": "2026-10-13",
+  "full_review_date": "2026-10-13",
   "volatility": "medium",
   "verify_at": "https://www.dubaichamberdigital.com",
   "source_brief_section": "6.9",
@@ -16,18 +16,26 @@
     "url": "https://www.dubaichamberdigital.com",
     "contact": {
       "email": "DubaiDigital@dubaichamber.com",
-      "whatsapp": "+971 800 242 6237"
-    }
+      "whatsapp": "+971 800 242 6237",
+      "toll_free": "800 242 6237 (800 CHAMBER)",
+      "international": "+971 4 228 0000"
+    },
+    "leadership_note": "Dubai Media Office (7 October 2026) and DCDE (20 September 2026) releases title Omar Sultan Al Olama as Chairman and Saeed Al Gergawi as Vice President of the Dubai Chamber of Digital Economy.",
+    "contact_note": "Phone numbers rechecked on dubaichamberdigital.com on 2026-10-13; the email address is obfuscated on the site and was not re-verified.",
+    "source_urls": [
+      "https://www.dubaichamberdigital.com/en/",
+      "https://mediaoffice.ae/en/news/2026/october/07-10/hamdan-bin-mohammed-launches-create-ai-agents-championship"
+    ]
   },
   "membership": {
     "standalone_membership": false,
-    "summary": "DCDE has no standalone membership scheme as of April 2026. Founders engage via specific programs (Dubai Founders HQ, Antler, FRWRDx, Create Apps).",
+    "summary": "DCDE has no standalone membership scheme (rechecked October 2026). Founders engage via specific programmes (Dubai Founders HQ, Antler residency, FRWRDx, Create AI Agents, Business Matching).",
     "dubai_chamber_of_commerce_separate": {
       "mandatory_for": "DET licensees conducting listed commercial, industrial, agricultural, professional, or service activities, subject to statutory exemptions",
       "free_zone_membership": "A free zone establishment may join after approval of its supervising free zone authority.",
       "annual_fee_aed_min": 50,
       "annual_fee_aed_max": 2200,
-      "fee_note": "The official schedule varies by legal form, owner nationality, and activity; AED 50 and AED 2,200 are category endpoints, not universal fees.",
+      "fee_note": "The official schedule varies by legal form, owner nationality, and activity; AED 50 (simple handicrafts) and AED 2,200 (e.g. free zone companies, banks, branches of foreign companies) are category endpoints, not universal fees. The renewal page header summarises fees as AED 300 to AED 2,200 while its detailed schedule still lists AED 50; members of the Mohammed Bin Rashid Establishment for SME Development get a 5-year exemption (rechecked 2026-10-13).",
       "url": "https://www.dubaichambers.com/en/membership-renewal",
       "source_urls": [
         "https://www.dubaichambers.com/en/membership-renewal",
@@ -43,21 +51,31 @@
       "operator": "DCDE + DET joint",
       "launched": "October 2025",
       "type": "phygital_platform",
-      "description": "Phygital (physical + digital) platform connecting Dubai founders to ecosystem resources, mentorship, and government services.",
+      "description": "Phygital (physical + digital) platform connecting Dubai founders to ecosystem resources, mentorship, and government services. Campus at the 25hours Hotel, One Central, Dubai World Trade Centre.",
       "url": "https://dubaifoundershq.com/en",
       "source_urls": [
+        "https://www.mediaoffice.ae/en/news/2025/october/06-10/hamdan-bin-mohammed-launches-dubai-founders-hq",
         "https://dubaifoundershq.com/en"
-      ]
+      ],
+      "launched_on": "2025-10-06",
+      "url_note": "dubaifoundershq.com returned HTTP 403 to automated checks on 2026-10-13 (bot blocking, not confirmed dead); launch facts verified from Dubai Media Office.",
+      "verified_as_of": "2026-10-13"
     },
     {
       "id": "antler_residency",
       "name": "Antler Founder Residency",
-      "operator": "DCDE + Antler",
+      "operator": "DET + DCDE (through Dubai Founders HQ) + Antler",
       "type": "founder_residency",
       "target": "600+ founders",
       "applications_open": "February 2026",
-      "description": "Founder residency program in partnership with Antler. Focus on early-stage tech founders ready to build their next venture.",
-      "url": "https://www.antler.co"
+      "description": "Multi-year partnership delivering Antler's Residency Program from Dubai Founders HQ, plus Antler's Academy, for early-stage founders. Dubai Media Office says more than 600 founders are expected to be upskilled. Current cohort dates were not published.",
+      "url": "https://www.antler.co",
+      "announced_on": "2026-02-10",
+      "apply_url": "https://www.antler.co/apply",
+      "source_urls": [
+        "https://www.mediaoffice.ae/en/news/2026/february/10-02/dubai-founders-hq-partners-with-antler-to-launch-flagship-programmes"
+      ],
+      "verified_as_of": "2026-10-13"
     },
     {
       "id": "frwrdx",
@@ -70,16 +88,21 @@
       "source_urls": [
         "https://www.dubaichamberdigital.com/en/frwrdx"
       ],
-      "current_status": "Register-interest form available. The published cohort schedule remains September to December 2025; no new dated cohort was verified.",
+      "current_status": "Register-interest form available. The published cohort schedule remains 15 September to 21 December 2025 (page last updated 13 October 2025); no new dated cohort was verified (rechecked 13 October 2026).",
       "cost_note": "Dubai Chambers describes sponsoring committed participants; confirm the offered seat and current terms.",
-      "verified_as_of": "2026-09-28"
+      "verified_as_of": "2026-10-13"
     },
     {
       "id": "unicorn_30",
       "name": "Unicorn 30 Programme",
       "operator": "DCDE",
       "type": "scale_up",
-      "description": "Programme to identify and support 30 future unicorns from Dubai's tech ecosystem."
+      "description": "Programme developed by DCDE with about 80 local and international companies to fast-track 30 emerging companies in new economic sectors towards billion-dollar valuations, under the Dubai Founders HQ umbrella. Approved by Sheikh Hamdan bin Mohammed at the second 2025 meeting of the Higher Committee for Future Technology Development and the Digital Economy. No application window was found.",
+      "approved_on": "2025-10-19",
+      "source_urls": [
+        "https://www.mediaoffice.ae/en/news/2025/october/19-10/hamdan-bin-mohammed"
+      ],
+      "verified_as_of": "2026-10-13"
     },
     {
       "id": "create_apps_championship",
@@ -88,9 +111,34 @@
       "type": "global_competition",
       "current_cycle": {
         "number": 3,
-        "status": "ongoing_finalist_phase",
+        "status": "concluded",
         "registration_status": "closed",
-        "finalist_teams": 12
+        "finalist_teams": 12,
+        "dubai_app_of_the_year": "POP by Kwelio",
+        "winners": [
+          {
+            "category": "Best Youth-made App",
+            "app": "Ettan Ehsan",
+            "description": "Gamified learning platform"
+          },
+          {
+            "category": "Most Impactful App",
+            "app": "RUSH",
+            "description": "Group travel marketplace"
+          },
+          {
+            "category": "Most Innovative App",
+            "app": "LiaPay",
+            "description": "AI financial wellness assistant"
+          },
+          {
+            "category": "Longevity App of the Year",
+            "app": "POP by Kwelio",
+            "description": "Medication-adherence app"
+          }
+        ],
+        "entries": 9754,
+        "finalist_teams_source_note": "12 finalists per the official page (announced 14 April 2026)."
       },
       "prize_pool_usd": 720000,
       "categories": [
@@ -104,17 +152,64 @@
         "registration_closed": "2025-12-28",
         "semi_finals": "2026-04-13",
         "finalists_announced": "2026-04-14",
-        "finals": "2026-10-07"
+        "finals": "2026-10-07",
+        "semi_finalists_announced": "2026-01-30"
       },
       "url": "https://createapps.ae/en/create-apps-championship",
-      "notes": "The official structured timeline schedules the finals for 7 October 2026, while a stale FAQ answer says April 2026. See the createapps feature for the full timeline and consistency warning.",
+      "notes": "Cycle 3 finals were held on 7 October 2026. The Championship is succeeded by the Create AI Agents Championship launched the same day; no Cycle 4 of Create Apps is announced. See the createapps feature for the full timeline and results.",
       "accelerator_outcome_2026": {
         "announcement_date": "2026-06-16",
         "apps_launched": 32,
         "source_urls": [
           "https://www.dubaichamberdigital.com/en/e/dcde_news_detailed_page/29577/5459288"
-        ]
-      }
+        ],
+        "ai_apps_pct": 60,
+        "sprint_days": 45,
+        "countries": 22
+      },
+      "source_urls": [
+        "https://mediaoffice.ae/en/news/2026/october/07-10/hamdan-bin-mohammed-launches-create-ai-agents-championship",
+        "https://createapps.ae/en/create-apps-championship",
+        "https://www.mediaoffice.ae/en/news/2025/april/16-04/hamdan-bin-mohammed-honours-winners-of-the-create-apps-championship"
+      ],
+      "prize_note": "The official page states a pool of over USD 720,000. USD 150,000 per category winner is confirmed for the 2025 (second) edition by Dubai Media Office; the official Cycle 3 page does not restate the per-category amount.",
+      "verified_as_of": "2026-10-13"
+    },
+    {
+      "id": "create_ai_agents_championship",
+      "name": "Create AI Agents Championship",
+      "operator": "Dubai Chamber of Digital Economy (DCDE)",
+      "type": "global_competition",
+      "launched_on": "2026-10-07",
+      "replaces": "Create Apps Championship",
+      "categories": [
+        "Best Societal AI Agent",
+        "Best Personal AI Agent",
+        "Best Business AI Agent",
+        "Best Youth AI Agent (lead participant under 21 at registration)"
+      ],
+      "prize_per_category_aed": 550000,
+      "prize_per_category_usd": 150000,
+      "ai_agent_of_the_year_aed": 1000000,
+      "prize_pool_note": "Dubai Media Office cites a pool exceeding AED 2.5 million: AED 550,000 for each of four category winners, plus AED 1 million and the Dubai AI Agent of the Year title for one of them. The official FAQ states USD 750,000 in total grants, USD 150,000 per category winner, and additional funding for the AI Agent of the Year.",
+      "eligibility_summary": "Open worldwide to individuals and teams (up to 6 members), technical or non-technical, no minimum age; free to enter; ideas, prototypes and early MVPs accepted; submissions in English. Entrants submit an AI-agent prototype, pitch deck and demo video.",
+      "registration_status": "open",
+      "registration_opened": "2026-10-07",
+      "registration_close_note": "Dubai Media Office and the official FAQ say registration closes in December 2026; the official page timeline says January 2027. Confirm the deadline on the official page before relying on either.",
+      "indicative_timeline": {
+        "submission": "2027-01",
+        "semi_final_pitch_day": "2027-03",
+        "finalists_announced": "2027-03",
+        "grand_final": "first week of May 2027",
+        "semi_finalists_announced": "2027-01 per the official timeline (24 teams); the FAQ says February 2027"
+      },
+      "url": "https://www.dubaichamberdigital.com/en/create-ai-agents",
+      "source_urls": [
+        "https://mediaoffice.ae/en/news/2026/october/07-10/hamdan-bin-mohammed-launches-create-ai-agents-championship",
+        "https://www.dubaichamberdigital.com/en/create-ai-agents"
+      ],
+      "verified_as_of": "2026-10-13",
+      "prize_pool_usd_total": 750000
     },
     {
       "id": "canva_partnership",
@@ -133,7 +228,7 @@
       "source_urls": [
         "https://www.dubaichamberdigital.com/en/e/dcde_news_detailed_page/29577/6062306"
       ],
-      "verified_as_of": "2026-09-28"
+      "verified_as_of": "2026-10-13"
     },
     {
       "id": "oraseya_sandbox_pitching",
@@ -142,26 +237,35 @@
       "type": "investor_access",
       "latest_session": {
         "announcement_date": "2026-09-20",
-        "startups": 7
+        "startups": 7,
+        "startups_named": [
+          "Arakan",
+          "Duno",
+          "YOUNEA",
+          "Riayatech",
+          "Avelin",
+          "SENSI",
+          "Cogniver"
+        ]
       },
       "description": "DCDE-arranged pitching session connecting digital startups with Oraseya Capital, the DIEZ investment arm. Its SANDBOX Investment Program cites potential investments of AED 550,000 to about AED 11 million plus mentorship; the fund manages AED 500 million for pre-seed to Series B technology startups.",
       "application_status": "Participation was by DCDE selection; no open application window was published.",
       "source_urls": [
         "https://www.dubaichamberdigital.com/en/e/dcde_news_detailed_page/29577/6180217"
       ],
-      "verified_as_of": "2026-09-28"
+      "verified_as_of": "2026-10-13"
     },
     {
       "id": "business_matching",
       "name": "Business Matching",
       "operator": "DCDE",
       "type": "market_entry_and_business_support",
-      "description": "Support with Dubai market entry, business connections, service providers, and ecosystem introductions.",
+      "description": "Matchmaking for tech companies with partners, investors and customers, plus institutional support services through the Dubai Chambers partner network: market entry, corporate services, introductions and funding opportunities. Companies submit a form; the team prepares match factsheets and sends introductory emails.",
       "url": "https://www.dubaichamberdigital.com/en/business-matching-",
       "source_urls": [
         "https://www.dubaichamberdigital.com/en/business-matching-"
       ],
-      "verified_as_of": "2026-09-05"
+      "verified_as_of": "2026-10-13"
     }
   ],
   "knowledge_hub": {
@@ -185,12 +289,16 @@
         "title": "The Entrepreneur's AI Playbook",
         "type": "PDF guide",
         "pages_approx": 52,
-        "launched": "July 2025"
+        "launched": "July 2025",
+        "source_urls": [
+          "https://mediaoffice.ae/en/news/2025/july/29-07/dubai-chamber-of-digital-economy-launches-the-entrepreneur-ai-playbook"
+        ]
       }
     ],
-    "claimed_total_reports": 8,
+    "claimed_total_reports": 25,
     "verified_count": 4,
-    "url_pattern": "/documents/<groupId>/0/<name>.pdf/<UUID>"
+    "url_pattern": "/documents/<groupId>/0/<name>.pdf/<UUID>",
+    "total_note": "The Knowledge Hub listing showed 'Showing 1 to 10 of 25' on 2026-10-13; four titles are tracked here. The AI Playbook launch (29 July 2025) is confirmed by Dubai Media Office; its 52-page length comes from a single secondary source and was not re-verified."
   },
   "impact_2025": {
     "digital_startups_supported": 1690,
@@ -200,8 +308,11 @@
     "fintech_pct": 12,
     "events_count": 36,
     "international_roadshows": 17,
-    "source": "DCDE January 2026 press release"
+    "source": "DCDE January 2026 press release (Dubai Media Office, 22 January 2026; figures rechecked 2026-10-13)",
+    "source_urls": [
+      "https://mediaoffice.ae/en/news/2026/january/22-01/dubai-chamber-of-digital-economy-digital-startups"
+    ]
   },
-  "previous_knowledge_date": "2026-09-05",
-  "last_refresh_scope": "Targeted refresh of 2026-09-28: updated the Canva partnership from the 7 September 2026 DCDE announcement (free one-year Canva Business, eligibility rules, 250,000 SMEs and individuals over five years) and added the 20 September 2026 Oraseya Capital SANDBOX pitching session for 7 startups. Rechecked FRWRDx (still only the September to December 2025 cohort published) and the Create Apps Championship (finals still 7 October 2026) as unchanged. Unicorn 30, Antler residency and impact_2025 figures were not re-verified. Not a full re-verification of every field in this pack; full_review_date is preserved."
+  "previous_knowledge_date": "2026-09-28",
+  "last_refresh_scope": "Full review of 2026-10-13: every programme, URL and figure rechecked against dubaichamberdigital.com, dubaichambers.com, createapps.ae and Dubai Media Office. Changed today: Create Apps Championship Cycle 3 marked concluded (finals 7 October 2026, winners added) and successor Create AI Agents Championship added (official FAQ total USD 750,000 now recorded; registration close still conflicting, December 2026 vs January 2027); Antler residency re-sourced to the 10 February 2026 Dubai Media Office release (operator DET + DCDE via Dubai Founders HQ, apply URL added); Unicorn 30 sourced to the 19 October 2025 approval; Dubai Founders HQ launch date 6 October 2025 added; Saeed Al Gergawi's title per official releases is Vice President; chamber phone numbers rechecked; Knowledge Hub now lists 25 items (was recorded as 8); impact_2025 figures confirmed; Chamber of Commerce fee endpoints AED 50 to AED 2,200 confirmed. Unchanged and confirmed: FRWRDx (2025 cohort only), Canva offer, Oraseya session, Business Matching. Not verified: DCDE contact email (obfuscated), 'established 2021' wording, the 52-page AI Playbook length, the USD 150,000 per-category prize for Cycle 3 specifically, and dubaifoundershq.com content (HTTP 403 to automated checks)."
 }

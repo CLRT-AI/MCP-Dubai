@@ -37,10 +37,20 @@ class TestDcde:
         dates = data["key_dates"]
         assert isinstance(cycle, dict)
         assert isinstance(dates, dict)
-        assert cycle["status"] == "ongoing_finalist_phase"
+        assert cycle["status"] == "concluded"
         assert cycle["registration_status"] == "closed"
+        assert cycle["dubai_app_of_the_year"] == "POP by Kwelio"
         assert dates["finals"] == "2026-10-07"
-        assert dcde_tools.KNOWLEDGE.knowledge_date == "2026-09-28"
+        assert dcde_tools.KNOWLEDGE.knowledge_date == "2026-10-13"
+
+    @pytest.mark.asyncio
+    async def test_create_ai_agents_successor(self) -> None:
+        result = await dcde_tools.dcde_programs(program_id="create_ai_agents_championship")
+        data = result["data"]
+        assert isinstance(data, dict)
+        assert data["launched_on"] == "2026-10-07"
+        assert data["registration_status"] == "open"
+        assert data["prize_per_category_aed"] == 550000
 
     @pytest.mark.asyncio
     async def test_unknown_program(self) -> None:
@@ -132,7 +142,7 @@ class TestEvents:
         assert dates["end"] == "2026-12-10"
 
     def test_knowledge_date_refreshed(self) -> None:
-        assert events_tools.KNOWLEDGE.knowledge_date == "2026-09-28"
+        assert events_tools.KNOWLEDGE.knowledge_date == "2026-10-13"
 
 
 class TestParkin:

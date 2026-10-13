@@ -185,9 +185,10 @@ class TestKnowledge:
         result = await tools.attestation_guide()
         knowledge = result["knowledge"]
         assert isinstance(knowledge, dict)
-        assert knowledge["knowledge_date"] == "2026-09-05"
-        assert knowledge["previous_knowledge_date"] == "2026-08-14"
-        assert "MoFA digital/courier" in knowledge["last_refresh_scope"]
+        assert knowledge["knowledge_date"] == "2026-10-13"
+        assert knowledge["previous_knowledge_date"] == "2026-09-05"
+        assert knowledge["full_review_date"] == "2026-10-13"
+        assert "Full review of 2026-10-13" in knowledge["last_refresh_scope"]
 
     def test_registers_with_knowledge_registry(self) -> None:
         import importlib

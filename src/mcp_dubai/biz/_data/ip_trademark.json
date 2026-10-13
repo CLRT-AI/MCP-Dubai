@@ -1,28 +1,30 @@
 {
   "domain": "ip_trademark",
-  "knowledge_date": "2026-09-05",
-  "full_review_date": "2026-04-13",
+  "knowledge_date": "2026-10-13",
+  "full_review_date": "2026-10-13",
   "volatility": "medium",
-  "verify_at": "https://moet.gov.ae",
+  "verify_at": "https://www.moet.gov.ae",
   "source_brief_section": "6.10d",
-  "disclaimer": "IP fees and processes change. Cabinet Resolution 102 of 2025 introduced new fees effective 14 November 2025. Verify with MOET before filing.",
+  "disclaimer": "IP fees and processes change. Cabinet Resolution 102 of 2025 introduced new fees effective mid-November 2025 (14 or 15 November; see effective_date_note). Verify with MOET before filing.",
   "currency": "AED",
   "authority": {
     "name": "Ministry of Economy and Tourism",
     "short_name": "MOET",
     "rebranded_from": "Ministry of Economy",
     "rebranded_in": "2025",
-    "old_url": "https://moec.gov.ae",
-    "old_url_status": "301-redirects to moet.gov.ae",
-    "url": "https://moet.gov.ae",
+    "old_url": "https://www.moec.gov.ae",
+    "old_url_status": "www.moec.gov.ae redirects to www.moet.gov.ae; the bare https://moec.gov.ae and https://moet.gov.ae hosts failed to connect on 2026-10-13, so use the www hosts.",
+    "url": "https://www.moet.gov.ae",
     "warning": "MOCCAE is Climate Change, NOT IP. The IP authority is MOET. Frequently confused."
   },
   "trademark": {
     "search": {
       "free_basic_search": true,
-      "free_search_url": "https://moet.gov.ae",
+      "free_search_url": "https://www.moet.gov.ae",
       "paid_formal_inquiry_aed": 350,
-      "paid_inquiry_login": "UAE Pass required"
+      "paid_inquiry_login": "UAE Pass required",
+      "paid_inquiry_url": "https://www.moet.gov.ae/en/w/trademark-inquiry",
+      "note": "MOET's Trademark Inquiry service page (rechecked 2026-10-13) lists only the AED 350 paid inquiry via the MOET website or app; it does not mention a free basic search or UAE Pass by name, so those two values were kept from the earlier review but not re-verified."
     },
     "registration": {
       "fee_range_aed_min": 6500,
@@ -49,7 +51,14 @@
       "source_urls": [
         "https://www.moet.gov.ae/en/w/register-trademark%C2%A0?redirect=%2Fen%2Fuae-lifestyle",
         "https://uaelegislation.gov.ae/en/legislations/1562"
-      ]
+      ],
+      "late_payment_fines_aed": {
+        "publication_fee_per_month": 100,
+        "publication_fee_cap_per_year": 1000,
+        "registration_fee_per_month": 1000,
+        "registration_fee_cap_per_year": 10000
+      },
+      "source_note": "MOET register-trademark page rechecked 2026-10-13 (fees AED 750 / 750 / 5,000, 20 working days, 30-day objection period, certificate within 30 days all confirmed). uaelegislation.gov.ae returned HTTP 403 to automated checks and was not re-read."
     },
     "cabinet_resolution_102_2025": {
       "effective_from": "2025-11-14",
@@ -57,10 +66,21 @@
       "key_fees_aed": {
         "regular_examination": 750,
         "expedited_one_day_examination": 2250,
-        "appeal": 5000
+        "appeal": 5000,
+        "grievance_objection_dismissed": 7500,
+        "infringement_complaint": 2250,
+        "renewal_final_year": 5750,
+        "renewal_within_six_months_after_expiry": 6500
       },
       "sme_discount_pct": 50,
-      "sme_discount_notes": "50% reduction in all trademark service fees for members of the UAE National Programme for Small and Medium Enterprises; ordinary SME status alone is not enough."
+      "sme_discount_notes": "50% reduction in all trademark service fees for members of the UAE National Programme for Small and Medium Enterprises; ordinary SME status alone is not enough.",
+      "appeal_note": "'appeal' is the AED 5,000 grievance against a refusal or cancellation; a grievance by a party whose objection was dismissed is AED 7,500.",
+      "people_of_determination": "Full fee exemption.",
+      "effective_date_note": "The 14 November 2025 date was kept from the earlier review; MOET's 21 October 2025 announcement does not state it and several law-firm reports cite 15 November 2025 (60 days after Gazette publication). The Gazette text was not reachable to settle it.",
+      "fee_doubling_report": "An undated report that MOET trademark fees would double was searched again on 2026-10-13; no MOET, WAM or legislation source supports it, and the fees on MOET's service page are unchanged. Not adopted.",
+      "source_urls": [
+        "https://www.moet.gov.ae/en/-/ministry-of-economy-and-tourism-introduces-trademark-service-fees-as-part-of-efforts-to-enhance-uae-s-appeal-for-national-and-international-brands-and-support-sme-owners"
+      ]
     },
     "wipo_madrid": {
       "uae_member": true,
@@ -69,13 +89,14 @@
       "founder_relevance": "Founders can use international trademark filing via WIPO Madrid System once they have a UAE base mark.",
       "in_force_since": "2021-12-28",
       "source_urls": [
-        "https://www.wipo.int/en/web/madrid-system/w/news/2021/news_0026"
+        "https://www.wipo.int/en/web/madrid-system/w/news/2021/news_0026",
+        "https://www.wipo.int/wipolex/en/treaties/ShowResults?code=AE"
       ]
     }
   },
   "patent": {
     "uae_patent": {
-      "url": "https://moet.gov.ae",
+      "url": "https://www.moet.gov.ae",
       "notes": "Less common than trademark in the founder context."
     },
     "gcc_patent": {
@@ -87,38 +108,52 @@
       "current_processing_note": "The GCC Patent Office later resumed examination services on behalf of Bahrain and Kuwait from 1 January 2023 and Qatar from 1 July 2023, but resulting rights are limited to the filing country's national territory rather than all six GCC states.",
       "uae_filing_note": "A new UAE patent application must use the UAE national route or the UAE national phase of a PCT application; there is no new unitary six-state GCC filing route.",
       "source_urls": [
-        "https://inspire.wipo.int/index.php/system/files/juri/GCC.pdf",
-        "https://gccpo.org/aboutusen/ShowNews?id=66"
-      ]
+        "https://gccpo.org/aboutusen/ShowNews?id=66",
+        "https://gccpo.org/AboutUsEn/ShowNews?id=69",
+        "https://www.gccpo.org/Doc/PatentGazette/Gazette/Gazette-E/103.pdf"
+      ],
+      "stop_basis_note": "GCCPO's notice ties the stop to amendments approved by the GCC Supreme Council at its 41st session in Al-Ula on 5 January 2021; the 6 January 2021 stop date is kept from the earlier review.",
+      "dead_source_replaced": "https://inspire.wipo.int/index.php/system/files/juri/GCC.pdf now redirects to the WIPO INSPIRE landing page and was replaced with GCCPO notices on 2026-10-13."
     }
   },
   "copyright": {
     "registration_required": false,
     "berne_convention": true,
-    "notes": "UAE is a Berne Convention signatory. Registration is not required for copyright protection but is possible for evidentiary purposes via MOET."
+    "notes": "UAE acceded to the Berne Convention on 14 April 2004 (in force 14 July 2004). Registration is not required for copyright protection but is possible for evidentiary purposes via MOET's Intellectual Works Rights Registration service.",
+    "registration_fees_aed": {
+      "per_author_individual": 50,
+      "per_company_or_institution": 200
+    },
+    "registration_service_working_days": 3,
+    "registration_url": "https://www.moet.gov.ae/en/w/register-compilations-%C2%A0",
+    "source_urls": [
+      "https://www.moet.gov.ae/en/w/register-compilations-%C2%A0",
+      "https://www.wipo.int/wipolex/en/treaties/ShowResults?code=AE"
+    ]
   },
   "api_status": {
     "trademark_search_api": false,
     "patent_search_api": false,
     "copyright_register_api": false,
     "wipo_global_brand_database": {
-      "url": "https://www3.wipo.int/branddb/en/",
+      "url": "https://branddb.wipo.int/branddb/en/",
       "type": "html_only",
-      "notes": "WIPO Global Brand Database is HTML, no public REST API."
+      "notes": "WIPO Global Brand Database is HTML, no public REST API. The old www3.wipo.int/branddb URL now redirects to branddb.wipo.int."
     }
   },
   "recommended_approach": "Ship reference tools with canonical URLs and the fee schedule. Build a calculator for the SME discount. Do not promise programmatic trademark search.",
-  "previous_knowledge_date": "2026-08-14",
-  "last_refresh_scope": "Targeted correctness audit of 2026-09-05: reconfirmed MOET trademark fees and service target, corrected Madrid accession versus entry-into-force dates, and added the UAE Locarno Agreement accession and forthcoming 6 October 2026 entry into force from WIPO. Not a full re-verification of every field in this pack.",
+  "previous_knowledge_date": "2026-09-05",
+  "last_refresh_scope": "Full review of 2026-10-13: every fee, date and URL rechecked against moet.gov.ae, WIPO Lex, WIPO Madrid news and gccpo.org. Changed today: Locarno Agreement marked in force since 6 October 2026 (accession 6 July 2026); MOET URLs moved to the www host (bare https hosts fail); WIPO Brand Database URL updated to branddb.wipo.int; dead WIPO INSPIRE GCC PDF replaced with GCCPO notices (Qatar added from 1 July 2023 confirmed); added late-payment fines, extra Cabinet Resolution 102 of 2025 fees (grievances, infringement complaint, renewals), People of Determination exemption, copyright registration fees (AED 50 per author, AED 200 per company, 3 working days) and Berne dates. Confirmed unchanged: trademark fees AED 750 / 750 / 5,000 (AED 6,500 total), AED 2,250 one-day examination, AED 350 inquiry, 20 working days, 30-day objection period, 50% National SME Programme discount, Madrid in force 28 December 2021. An undated report that trademark fees would double was searched again and not adopted (no primary source). Not verified: free basic search and UAE Pass requirement, the exact effective date (14 vs 15 November 2025) of Cabinet Resolution 102 of 2025, the 6 January 2021 GCC stop date, and uaelegislation.gov.ae pages (HTTP 403).",
   "industrial_design": {
     "locarno_agreement": {
       "accession_date": "2026-07-06",
       "in_force_from": "2026-10-06",
-      "status_as_of_2026_09_05": "Accession deposited; entry into force upcoming.",
+      "status_as_of_2026_10_13": "In force for the UAE since 2026-10-06 (WIPO Lex treaty record rechecked 2026-10-13).",
       "note": "The Locarno Agreement provides the international classification for industrial designs; accession does not itself grant design protection.",
       "source_urls": [
         "https://www.wipo.int/wipolex/en/treaties/ShowResults?code=AE"
-      ]
+      ],
+      "related_treaties_note": "WIPO Lex (rechecked 2026-10-13) also lists the UAE in the Nice Agreement (in force 18 April 2022), Paris Convention (19 September 1996) and PCT (10 March 1999); the UAE is not listed in the Hague Agreement."
     }
   }
 }

@@ -1,15 +1,15 @@
 {
   "domain": "founder_essentials",
-  "knowledge_date": "2026-09-05",
-  "full_review_date": "2026-04-13",
+  "knowledge_date": "2026-10-13",
+  "full_review_date": "2026-10-13",
   "volatility": "medium",
   "verify_at": "https://www.mofa.gov.ae/en/services/attestation",
   "source_brief_section": "6.10b",
-  "disclaimer": "Document attestation, PRO, translation, and Chamber fees vary by document and route. Verify the current service quote. The UAE is not listed in the HCCH Apostille Convention status table checked on 5 September 2026; foreign-document requirements must be confirmed with the relevant UAE mission and receiving authority.",
+  "disclaimer": "Document attestation, PRO, translation, and Chamber fees vary by document and route. Verify the current service quote. The UAE is not listed in the HCCH Apostille Convention status table checked on 13 October 2026; foreign-document requirements must be confirmed with the relevant UAE mission and receiving authority.",
   "currency": "AED",
   "attestation": {
     "uae_apostille_member": false,
-    "apostille_correction_note": "The UAE is absent from the official HCCH Apostille Convention status table checked on 5 September 2026. An apostille alone must not be assumed to replace applicable UAE attestation requirements.",
+    "apostille_correction_note": "The UAE is absent from the official HCCH Apostille Convention status table checked on 13 October 2026. An apostille alone must not be assumed to replace applicable UAE attestation requirements.",
     "legalization_chain": [
       {
         "step": 1,
@@ -35,7 +35,7 @@
     "fees": {
       "personal_document_aed": 150,
       "commercial_document_aed": 2000,
-      "scope_note": "Legacy document-class fees retained from the earlier review. The current service page routes by document and destination; confirm the application quote and any mission or courier charge."
+      "scope_note": "MoFA FAQ, checked 13 October 2026: AED 150 service fee for personal status documents and AED 2,000 for commercial documents. Commercial contracts may count as multiple documents, commercial invoices and certificates of origin go through eDAS, and courier or mission charges are extra. The application shows the total before payment."
     },
     "documents_typically_attested": [
       "Degree certificate",
@@ -48,12 +48,12 @@
     "timeline_weeks_min": 1,
     "timeline_weeks_max": 4,
     "portals": [
-      "https://www.mofa.gov.ae/en/services/attestation",
-      "https://mofaic.gov.ae"
+      "https://www.mofa.gov.ae/en/services/attestation"
     ],
     "source_urls": [
       "https://www.hcch.net/en/instruments/conventions/status-table/?cid=41",
-      "https://www.mofa.gov.ae/en/services/attestation"
+      "https://www.mofa.gov.ae/en/services/attestation",
+      "https://www.mofa.gov.ae/en/faqs"
     ],
     "legalization_chain_note": "Illustrative foreign-document sequence. Notarisation, prior authentication, embassy steps and Arabic translation depend on the document, issuing country, electronic mission service and receiving authority; not every case requires five physical steps.",
     "digital_attestation": {
@@ -61,11 +61,13 @@
       "route_selection": "The MoFA application selects digital or approved-courier processing based on issuing authority and document type.",
       "input_note": "Use the original verifiable digital PDF; a scan or photograph is not an original digital document.",
       "foreign_documents": "Use the UAE Missions Abroad service and check the mission website for electronic availability or in-person requirements.",
-      "verified_as_of": "2026-09-05",
+      "verified_as_of": "2026-10-13",
       "source_urls": [
         "https://www.mofa.gov.ae/en/services/attestation"
-      ]
-    }
+      ],
+      "processing_time": "Digital route up to 2 hours during official working hours; courier route 1 to 3 business days inside the UAE."
+    },
+    "timeline_note": "The 1 to 4 week range is an end-to-end estimate for a foreign-document chain. MoFA's in-UAE step itself is faster: digital attestation up to 2 hours in official working hours, courier attestation 1 to 3 business days inside the UAE, and up to 7 business days outside the UAE."
   },
   "pro_services": {
     "what_a_pro_does": [
@@ -106,18 +108,18 @@
     "same_day_uplift_pct_max": 50,
     "pricing_basis": "Private-provider market estimate only. MOJ does not publish the AED 50 to 150 per-page range or the urgency uplift as an official tariff. Obtain a quote and confirm whether the receiving authority requires legal translation.",
     "source_urls": [
-      "https://www.moj.gov.ae/en/translators.aspx",
-      "https://www.moj.gov.ae/en/services/services-categories/general/registration-of-legal-translator-a9314f86.aspx"
-    ]
+      "https://www.moj.gov.ae/en/translators.aspx"
+    ],
+    "registry_note": "The MOJ translators page is a section landing page linking to the legal-translator registration service; it is not a public searchable directory. Ask the translator for their MOJ registration."
   },
   "chamber_of_commerce": {
     "name": "Dubai Chamber of Commerce",
     "mandatory_for": "DET licensees conducting listed commercial, industrial, agricultural, professional, or service activities, subject to statutory exemptions",
-    "statutory_exemptions": "The governing law permits exemptions for specified micro and small enterprises and manual professions and trades, as set by the Chamber's board resolution.",
-    "free_zone_membership": "A free zone establishment may join after approval of its supervising free zone authority.",
+    "statutory_exemptions": "Under Article 16 of Dubai Law No. 1 of 2022, owners of micro and small enterprises and practitioners of manual professions and handicrafts, as specified with DET, are exempt from mandatory membership but may opt in.",
+    "free_zone_membership": "A free zone or special development zone establishment is not required to join and may join after approval of its supervising authority.",
     "annual_fee_aed_min": 50,
     "annual_fee_aed_max": 2200,
-    "fee_schedule_as_of": "2026-07-05",
+    "fee_schedule_as_of": "2026-10-13",
     "annual_fee_categories": {
       "national_establishments_specific_activity_aed": 700,
       "general_trading_aed": {
@@ -146,7 +148,7 @@
     "fee_notes": "The official renewal schedule varies by legal form, owner nationality, and activity. Use the applicable category rather than treating AED 50 or AED 2,200 as a universal fee.",
     "certificate_of_origin": {
       "fee_aed": 100,
-      "turnaround": "application reviewed within 2 hours",
+      "turnaround": "application reviewed within 2 hours if all requirements are met",
       "purpose": "Certifies the origin of goods for export or re-export"
     },
     "three_chambers_post_2021": [
@@ -164,7 +166,7 @@
     ]
   },
   "timelines": {
-    "trade_name_reservation": "Instant via app.invest.dubai.ae",
+    "trade_name_reservation": "Online via the Invest in Dubai portal; often same day, but timing is not published as an official service level",
     "det_initial_approval_days_min": 1,
     "det_initial_approval_days_max": 3,
     "mainland_setup_weeks_min": 2,
@@ -178,13 +180,19 @@
     "spouse_family_visa_weeks_min": 2,
     "spouse_family_visa_weeks_max": 4,
     "mofa_attestation_weeks_min": 1,
-    "mofa_attestation_weeks_max": 4
+    "mofa_attestation_weeks_max": 4,
+    "basis": "Market estimates for planning, not official service levels. Official single-step durations are shorter: ICP lists 2 days for residence permit issuance and 5 days for a new Emirates ID card; MoFA lists up to 2 hours (digital) or 1 to 3 business days (courier) for in-UAE attestation. Trade name and DET initial approval timing on the Invest in Dubai portal could not be confirmed from a primary source.",
+    "source_urls": [
+      "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64",
+      "https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e5a",
+      "https://www.mofa.gov.ae/en/services/attestation"
+    ]
   },
   "common_mistakes": [
     {
       "id": "wrong_activity_code",
       "title": "Choosing the wrong activity code",
-      "impact": "Limits banking, invoicing, and hiring downstream. Cannot be changed without a full license amendment.",
+      "impact": "Limits banking, invoicing, and hiring downstream. Adding or removing activities later requires a licence amendment and any activity-specific approvals.",
       "fix": "Look up DET activity list on app.invest.dubai.ae before applying. If unsure, choose a broader activity that covers your intended business."
     },
     {
@@ -197,9 +205,10 @@
       "id": "free_zone_mainland_invoice",
       "title": "Assuming a free zone licence automatically covers onshore activity",
       "impact": "Invoicing a mainland customer is not by itself the legal test. A Dubai free zone establishment that conducts activity outside its free zone must use the applicable DET licence or permit route, and eligibility depends on the activity and required authority approvals.",
-      "fix": "Compare a mainland DET licence with the branch-licence or temporary-permit route under Dubai Executive Council Resolution 11 of 2025. Confirm the activity on DET's current eligibility list before trading onshore.",
+      "fix": "Compare a mainland DET licence with the branch-licence or temporary-permit route under Dubai Executive Council Resolution 11 of 2025. DET's Free Zone Mainland Operating Permit, launched 8 October 2025, costs AED 5,000 for six months (renewable), is applied for on the Invest in Dubai platform, and initially covers non-regulated activities. Confirm the activity on DET's current eligibility list before trading onshore.",
       "source_urls": [
-        "https://dlp.dubai.gov.ae/Legislation%20Reference/2025/Executive%20Council%20Resolution%20No.%20(11)%20of%202025%20Regulating%20the%20Conduct%20of%20Free%20Zone%20Establishments%E2%80%99%20Activities.html"
+        "https://dlp.dubai.gov.ae/Legislation%20Reference/2025/Executive%20Council%20Resolution%20No.%20(11)%20of%202025%20Regulating%20the%20Conduct%20of%20Free%20Zone%20Establishments%E2%80%99%20Activities.html",
+        "https://mediaoffice.ae/en/news/2025/october/08-10/dubai-launches-free-zone-mainland-operating-permit"
       ]
     },
     {
@@ -217,7 +226,7 @@
     {
       "id": "no_ejari_before_visa",
       "title": "Not getting Ejari before applying for visa quota",
-      "impact": "Ejari is a precondition for visa quota in mainland setups. Delays the entire visa pipeline.",
+      "impact": "Mainland visa quota is tied to registered premises, and Ejari is the usual proof of premises for the establishment card and quota. Delays the entire visa pipeline.",
       "fix": "Sign and register Ejari first, then start the visa application chain."
     },
     {
@@ -234,17 +243,20 @@
     },
     {
       "id": "no_uae_pass",
-      "title": "Trying to operate without UAE Pass in 2025/2026",
+      "title": "Trying to operate without UAE Pass",
       "impact": "UAE Pass is required for almost every government e-service. Operating without it forces you to use slow physical channels.",
-      "fix": "Register for UAE Pass on day one. Verify to the highest level (full verification with Emirates ID + biometrics)."
+      "fix": "Register for UAE Pass on day one and upgrade to a verified account, through in-app face verification with your Emirates ID or at a UAE Pass kiosk.",
+      "source_urls": [
+        "https://u.ae/en/about-the-uae/digital-uae/digital-transformation/platforms-and-apps/the-uae-pass-app"
+      ]
     },
     {
       "id": "wrong_chamber",
       "title": "Mixing up the three Dubai Chambers",
       "impact": "Joining the wrong chamber wastes the membership fee and provides irrelevant services.",
-      "fix": "Mainland commercial license holders join Dubai Chamber of Commerce by default. International trade focus joins Dubai International Chamber. Tech/digital startups engage with DCDE through programs (no standalone membership)."
+      "fix": "Mainland commercial licence holders join Dubai Chamber of Commerce by default. International trade focus engages Dubai International Chamber. Tech and digital startups engage DCDE mainly through programmes such as Business in Dubai; no separate DCDE membership tier was found on 13 October 2026."
     }
   ],
-  "previous_knowledge_date": "2026-08-14",
-  "last_refresh_scope": "Targeted correctness audit of 2026-09-05: added current MoFA digital/courier attestation routes, reconfirmed UAE absence from the HCCH Apostille table, qualified the illustrative foreign-document chain, and removed unsupported universal licence-lapse penalties and named-free-zone banking allegations. Not a full re-verification of every field in this pack; full_review_date is preserved."
+  "previous_knowledge_date": "2026-09-05",
+  "last_refresh_scope": "Full review of 2026-10-13: verified UAE absence from the HCCH Apostille table, MoFA attestation routes, AED 150/2,000 fees (MoFA FAQ) and processing times, Dubai Chambers renewal schedule, AED 100 certificate of origin, Law 1 of 2022 membership rules, Resolution 11 of 2025, and the MOHRE Tasheel portal. Changed: added the AED 5,000 Free Zone Mainland Operating Permit, attestation and ICP processing times, a timelines basis note, UAE Pass verification route; removed the dead mofaic.gov.ae portal and a 404 MOJ registration URL; softened activity-amendment, Ejari and DCDE wording. Unverified: PRO, translation and bank-delay ranges (market estimates), mainland and free zone setup weeks, DET trade name and initial approval timing (invest.dubai.ae blocks automated access), and the DCDE membership model."
 }

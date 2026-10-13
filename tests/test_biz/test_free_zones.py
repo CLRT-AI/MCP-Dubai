@@ -146,7 +146,10 @@ class TestFreezoneToMainland:
         permit_types = mainland["permit_types"]
         assert isinstance(permit_types, list)
         fees = {p["type"]: p["fee_aed"] for p in permit_types}
-        assert fees["branch_licence"] == 10000
+        # Article 12 sets AED 10,000 only for a branch operating out of the free
+        # zone; the in-Emirate branch licence fee is left to applicable legislation.
+        assert fees["remote_branch_licence"] == 10000
+        assert fees["branch_licence"] is None
         assert fees["temporary_permit"] == 5000
         assert "Invest in Dubai" in str(mainland["apply_via"])
 
@@ -193,9 +196,10 @@ class TestKnowledgeMetadata:
         result = await tools.list_free_zones()
         knowledge = result["knowledge"]
         assert isinstance(knowledge, dict)
-        assert knowledge["knowledge_date"] == "2026-09-28"
-        assert knowledge["previous_knowledge_date"] == "2026-09-05"
-        assert "Targeted refresh of 2026-09-28" in knowledge["last_refresh_scope"]
+        assert knowledge["knowledge_date"] == "2026-10-13"
+        assert knowledge["full_review_date"] == "2026-10-13"
+        assert knowledge["previous_knowledge_date"] == "2026-09-28"
+        assert "Full review of 2026-10-13" in knowledge["last_refresh_scope"]
         assert knowledge["volatility"] == "high"
 
 

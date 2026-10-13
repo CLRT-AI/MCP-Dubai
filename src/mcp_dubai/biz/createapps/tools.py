@@ -27,10 +27,10 @@ async def createapps_championship() -> dict[str, object]:
     """
     Return Create Apps Championship details for the current cycle.
 
-    Cycle 3 launched 12 October 2025 and is in its finalist phase. Registration
-    is closed; the official structured timeline schedules the finals for
-    7 October 2026. The page also contains a stale FAQ date, which is flagged
-    in the returned record.
+    Cycle 3 launched 12 October 2025 and concluded with the finals on
+    7 October 2026; winners are in the returned record. No Cycle 4 is
+    announced: the successor Create AI Agents Championship launched the same
+    day and is listed among the programmes in submission_guide.
     """
     programs = _list("programs")
     for p in programs:

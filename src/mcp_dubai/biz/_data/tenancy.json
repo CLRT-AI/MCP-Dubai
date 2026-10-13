@@ -1,6 +1,6 @@
 {
   "domain": "tenancy",
-  "knowledge_date": "2026-09-28",
+  "knowledge_date": "2026-10-13",
   "full_review_date": "2026-07-02",
   "volatility": "medium",
   "verify_at": "https://dubailand.gov.ae/en/eservices/register-renew-ejari-contract/",
@@ -70,7 +70,7 @@
     },
     "note": "This changes the standard 'rent in 1-4 cheques' guidance: instalment plans are now an official DLD option through approved partners.",
     "dld_programme_terms": "Per the DLD FlexiRent page (checked 2026-09-28): participation by property management companies is voluntary; payment options (monthly, quarterly or semi-annual), grace periods and any discounts depend on each participating company's offering; eligible units are apartments, villas, offices and retail spaces selected by the company; tenancy must be 12 months or longer; agreed terms are written into the tenancy contract. The page shows 12 partner logos.",
-    "rent_now_pay_later_status": "A separate bank-backed, zero-interest 'Rent Now, Pay Later' service was reported in August 2026 as due in September 2026. No official DLD launch had been located as of 2026-09-28; treat it as announced, not live.",
+    "rent_now_pay_later_status": "A separate bank-backed, zero-interest 'Rent Now, Pay Later' service was reported in August 2026 as due in September 2026. As of 2026-10-13 no official DLD launch had been located; treat it as announced, not live.",
     "source_urls": [
       "https://dubailand.gov.ae/en/flexi-rent-initiative/",
       "https://www.thenationalnews.com/business/property/2026/06/23/dubai-launches-flexi-rent-scheme-to-support-tenants/",
@@ -160,13 +160,13 @@
     "announced": "2026-03-11",
     "published": "2026-03-12",
     "in_force": "In force since 2026-09-08 (Article 40: 180 days after publication in Official Gazette issue 764, dated 2026-03-12). Some press reports give 26 August 2026 by counting from the 27 February issue date; the Gazette-dated text supports 8 September.",
-    "implementing_rules_status": "As of 2026-09-28 no implementing decision (permit procedure, fees, occupancy limits or minimum space per resident) had been located in the Dubai Official Gazette or on Dubai Municipality channels. Article 38 provides that competent authorities issue implementing decisions, published in the Official Gazette; Dubai Municipality has said applications will be made through its digital channels under procedures still to be announced.",
+    "implementing_rules_status": "On 7 October 2026 Dubai Municipality issued the Planning and Building Requirements Guide for Shared Housing and Permitted Areas under Law 4 of 2026. It sets a minimum bedroom area of 5 sqm per person, requires each building to be assigned to one category (individual or family accommodation, with a separate bedroom and en-suite bathroom per family), names more than 44 permitted areas (including Al Souq Al Kabeer, Al Ras, Al Warqa 1, Al Barsha 1, Al Muraqqabat and Al Rigga, with more to follow), and routes permit issuance and renewal through the Build in Dubai platform after Dubai Civil Defence fire-safety and SIRA CCTV checks. Existing buildings have until 8 September 2027 to regularise; this does not cover safety violations or unauthorised changes of use. Collective labour accommodation is excluded. Permit fees were not published in the sources checked on 2026-10-13.",
     "summary": "Law No. 4 of 2026 regulates the occupancy and management of shared housing (bed space, partitioned, and co-living arrangements) in Dubai: operator permits, an electronic Shared Housing Registry, minimum space per resident, and fines up to AED 1,000,000.",
     "key_rules": [
       "No unit may be allocated to shared housing without a permit (valid 1 year, renewable)",
       "DLD manages an electronic Shared Housing Registry linked to Dubai Municipality",
       "Only property owners, licensed property-management firms, or licensed subleasing entities may operate shared housing; tenants cannot sublease",
-      "Dubai Municipality determines occupancy limits, minimum space and technical standards through implementing requirements; the Law itself does not specify a universal 5 sqm-per-resident minimum."
+      "Dubai Municipality's Planning and Building Requirements Guide (7 October 2026) sets a minimum bedroom area of 5 sqm per person and limits shared housing to more than 44 permitted areas; check the area list before renting or operating."
     ],
     "fines": {
       "range_aed": "500 to 500,000",
@@ -177,7 +177,9 @@
     "source_urls": [
       "https://mediaoffice.ae/en/news/2026/march/11-03/mohammed-bin-rashid-issues-law-regulating-the-management",
       "https://dlp.dubai.gov.ae/Legislation%20Ar%20Reference/2026/قانون%20رقم%20(4)%20لسنة%202026%20بشأن%20تنظيم%20إشغال%20وإدارة%20السكن%20المشترك.html",
-      "https://dlp.dubai.gov.ae/Legislation%20Ar%20Reference/2026/قانون%20رقم%20(4)%20لسنة%202026%20بشأن%20تنظيم%20إشغال%20وإدارة%20السكن%20المشترك.pdf"
+      "https://dlp.dubai.gov.ae/Legislation%20Ar%20Reference/2026/قانون%20رقم%20(4)%20لسنة%202026%20بشأن%20تنظيم%20إشغال%20وإدارة%20السكن%20المشترك.pdf",
+      "https://www.wam.ae/en/article/c2mg2qe-dubai-municipality-issues-planning-and-building",
+      "https://www.zawya.com/en/press-release/government-news/dubai-municipality-issues-planning-and-building-requirements-guide-for-the-regulation-occupancy-and-management-of-shared-housing-1548142"
     ],
     "issued_on": "2026-02-27",
     "official_gazette_issue": 764,
@@ -195,6 +197,6 @@
       "https://dubailand.gov.ae/en/eservices/rental-index/rental-index/"
     ]
   },
-  "previous_knowledge_date": "2026-09-05",
-  "last_refresh_scope": "Targeted refresh of 2026-09-28: marked shared-housing Law 4 of 2026 as in force since 2026-09-08 after re-reading the Gazette-dated text (issue 764, 12 March 2026) and recorded that no implementing decision had been located; re-verified Ejari fees (AED 177.75 app, AED 220 trustee centre), documents and service time on the DLD service page; added DLD FlexiRent programme terms from the official page and flagged the reported Rent Now, Pay Later service as not yet live. RERA rent-increase bands, RDC fees and DLD initiative counts were not re-verified. Not a full re-verification of every field in this pack; full_review_date is preserved."
+  "previous_knowledge_date": "2026-09-28",
+  "last_refresh_scope": "Targeted refresh of 2026-10-13: recorded Dubai Municipality's 7 October 2026 Planning and Building Requirements Guide implementing shared-housing Law 4 of 2026 (5 sqm per person, individual or family categories, 44+ permitted areas, Build in Dubai permits, compliance by 8 September 2027) and replaced the outdated note that no implementing rules existed; confirmed the reported Rent Now, Pay Later service still has no official DLD launch. No October 2026 Ejari fee or Rental Index change was found. RERA rent-increase bands, RDC fees and DLD initiative counts were not re-verified. Not a full re-verification of every field in this pack; full_review_date is preserved."
 }
